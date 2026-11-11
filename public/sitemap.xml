@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.aksdentalclinic.in/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.aksdentalclinic.in/hero-dental.webp</image:loc>
+      <image:title>AK&apos;s Elite Dental Clinic and Orthodontic Centre in K.Pudur, Madurai</image:title>
+      <image:caption>Specialist Orthodontics, 3D Clear Aligners, and Dental Clinic in K.Pudur, Madurai</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.aksdentalclinic.in/clinic-photos/dr_khalidh_khan_suit.webp</image:loc>
+      <image:title>Dr. Khalidh Khan (BDS, MDS Orthodontics) - Chief Specialist</image:title>
+      <image:caption>Consultant Orthodontist &amp; Dentofacial Orthopaedics Specialist at AK&apos;s Elite Dental Madurai</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.aksdentalclinic.in/clinic-photos/itero_dr_khalidh_suit.webp</image:loc>
+      <image:title>iTero 3D Digital Intraoral Scanning Suite</image:title>
+      <image:caption>3D Intraoral digital scanning for Invisalign and clear aligners in Madurai</image:caption>
+    </image:image>
+  </url>
+</urlset>

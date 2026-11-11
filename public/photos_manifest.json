@@ -1,0 +1,101 @@
+[
+  {
+    "filename": "aks_real_01.webp",
+    "path": "/clinic-photos/aks_real_01.webp",
+    "dimensions": [
+      1200,
+      1600
+    ],
+    "aspect": "portrait"
+  },
+  {
+    "filename": "aks_real_02.webp",
+    "path": "/clinic-photos/aks_real_02.webp",
+    "dimensions": [
+      1200,
+      1600
+    ],
+    "aspect": "portrait"
+  },
+  {
+    "filename": "aks_real_03.webp",
+    "path": "/clinic-photos/aks_real_03.webp",
+    "dimensions": [
+      1200,
+      1600
+    ],
+    "aspect": "portrait"
+  },
+  {
+    "filename": "aks_real_04.webp",
+    "path": "/clinic-photos/aks_real_04.webp",
+    "dimensions": [
+      1600,
+      1200
+    ],
+    "aspect": "landscape"
+  },
+  {
+    "filename": "aks_real_05.webp",
+    "path": "/clinic-photos/aks_real_05.webp",
+    "dimensions": [
+      900,
+      1600
+    ],
+    "aspect": "portrait"
+  },
+  {
+    "filename": "aks_real_06.webp",
+    "path": "/clinic-photos/aks_real_06.webp",
+    "dimensions": [
+      1200,
+      1600
+    ],
+    "aspect": "portrait"
+  },
+  {
+    "filename": "aks_real_07.webp",
+    "path": "/clinic-photos/aks_real_07.webp",
+    "dimensions": [
+      1600,
+      900
+    ],
+    "aspect": "landscape"
+  },
+  {
+    "filename": "aks_real_08.webp",
+    "path": "/clinic-photos/aks_real_08.webp",
+    "dimensions": [
+      1600,
+      900
+    ],
+    "aspect": "landscape"
+  },
+  {
+    "filename": "aks_real_09.webp",
+    "path": "/clinic-photos/aks_real_09.webp",
+    "dimensions": [
+      900,
+      1600
+    ],
+    "aspect": "portrait"
+  },
+  {
+    "filename": "aks_real_10.webp",
+    "path": "/clinic-photos/aks_real_10.webp",
+    "dimensions": [
+      1600,
+      900
+    ],
+    "aspect": "landscape"
+  },
+  {
+    "filename": "aks_real_11.webp",
+    "path": "/clinic-photos/aks_real_11.webp",
+    "dimensions": [
+      480,
+      848
+    ],
+    "aspect": "portrait"
+  }
+]
