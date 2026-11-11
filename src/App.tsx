@@ -14,6 +14,7 @@ import { LocationSection } from './components/location/LocationSection';
 import { ConversionCtaSection } from './components/common/ConversionCtaSection';
 import { Footer } from './components/common/Footer';
 import { MobileStickyBar } from './components/common/MobileStickyBar';
+import { BackToTop } from './components/common/BackToTop';
 
 export const App: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -67,6 +68,9 @@ export const App: React.FC = () => {
 
       {/* 14. Footer */}
       <Footer onOpenAppointment={() => handleOpenAppointment()} />
+
+      {/* Floating Clickable Back To Top Button */}
+      <BackToTop />
 
       {/* Mobile Sticky Action Bar */}
       <MobileStickyBar onOpenAppointment={() => handleOpenAppointment()} />
