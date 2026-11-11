@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Phone, Clock, Menu, X, Star, MessageSquare, Calendar, ChevronRight, Award } from 'lucide-react';
 import { CLINIC_DATA } from '../../data/clinicData';
 
@@ -8,14 +9,14 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ onOpenAppointment }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   const navLinks = [
-    { label: "Smile Gallery", href: "#transformations" },
-    { label: "Specialties", href: "#treatments" },
-    { label: "Symptom Triage", href: "#symptom-triage" },
-    { label: "Dr. Khalidh Khan", href: "#doctor" },
-    { label: "Reviews", href: "#reviews" },
-    { label: "Location", href: "#location" },
+    { label: "Home", to: "/" },
+    { label: "Specialties", to: "/services" },
+    { label: "About & Doctors", to: "/about" },
+    { label: "Smile Gallery", to: "/gallery" },
+    { label: "Location & Contact", to: "/contact" },
   ];
 
   return (
@@ -84,7 +85,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAppointment }) => {
         <div className="flex items-center justify-between h-18 sm:h-20 gap-2 sm:gap-4">
           
           {/* Brand Logo & Title with Crystal-Clear Luxury Lockup (Zero Wrapping & Zero Clipping) */}
-          <a href="#" className="flex items-center gap-2 sm:gap-3.5 group shrink min-w-0 select-none">
+          <Link to="/" className="flex items-center gap-2 sm:gap-3.5 group shrink min-w-0 select-none">
             {/* Tooth Emblem Squircle Badge */}
             <div className="h-10 w-11 sm:h-12 sm:w-14 rounded-2xl bg-gradient-to-br from-[#092B20] via-[#0F382C] to-[#04150F] flex items-center justify-center shadow-md shadow-emerald-950/25 p-1 sm:p-1.5 group-hover:scale-105 group-hover:border-emerald-400/50 transition-all duration-300 border border-emerald-600/30 shrink-0">
               <img 
@@ -113,19 +114,26 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAppointment }) => {
                 Dr. Khalidh Khan (MDS) • K.Pudur, Madurai
               </span>
             </div>
-          </a>
+          </Link>
 
-          {/* Desktop Navigation Links - Shown only on xl (1280px+) screens to guarantee 100% breathing room */}
-          <nav className="hidden xl:flex items-center gap-1 2xl:gap-2">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="px-3 py-1.5 rounded-full text-xs font-semibold text-slate-700 hover:text-[#062017] hover:bg-emerald-900/5 transition-all duration-200 whitespace-nowrap cursor-pointer"
-              >
-                {link.label}
-              </a>
-            ))}
+          {/* Desktop Navigation Links - Shown only on xl (1280px+) screens */}
+          <nav className="hidden xl:flex items-center gap-1.5">
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.to;
+              return (
+                <Link
+                  key={link.label}
+                  to={link.to}
+                  className={`px-3.5 py-1.5 rounded-full text-xs transition-all duration-200 whitespace-nowrap cursor-pointer ${
+                    isActive
+                      ? 'bg-emerald-950 text-amber-300 font-bold shadow-xs border border-amber-400/30'
+                      : 'text-slate-700 hover:text-[#062017] hover:bg-emerald-900/5 font-semibold'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Right Action CTAs & Controls */}
@@ -182,17 +190,24 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAppointment }) => {
 
           {/* Navigation Links */}
           <nav className="flex flex-col divide-y divide-emerald-950/5">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="py-3 px-2 text-sm font-semibold text-slate-800 hover:text-emerald-900 hover:bg-emerald-50 rounded-lg flex items-center justify-between transition-colors"
-              >
-                <span>{link.label}</span>
-                <ChevronRight className="w-4 h-4 text-emerald-700/60" />
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.to;
+              return (
+                <Link
+                  key={link.label}
+                  to={link.to}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`py-3 px-3 text-sm rounded-xl flex items-center justify-between transition-colors ${
+                    isActive
+                      ? 'bg-emerald-950 text-amber-300 font-bold'
+                      : 'text-slate-800 font-semibold hover:text-emerald-900 hover:bg-emerald-50'
+                  }`}
+                >
+                  <span>{link.label}</span>
+                  <ChevronRight className={`w-4 h-4 ${isActive ? 'text-amber-400' : 'text-emerald-700/60'}`} />
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Direct Action Buttons */}

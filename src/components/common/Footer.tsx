@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, Clock, Star, Navigation } from 'lucide-react';
 import { CLINIC_DATA } from '../../data/clinicData';
 
@@ -15,8 +16,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAppointment }) => {
           
           {/* Col 1: Brand */}
           <div className="space-y-4">
-            <div className="flex items-center gap-3.5">
-              <div className="h-14 w-16 rounded-2xl bg-gradient-to-br from-[#061E16] via-[#0B2D21] to-[#04150F] flex items-center justify-center p-2 border border-emerald-600/40 shadow-lg shrink-0">
+            <Link to="/" className="flex items-center gap-3.5 group">
+              <div className="h-14 w-16 rounded-2xl bg-gradient-to-br from-[#061E16] via-[#0B2D21] to-[#04150F] flex items-center justify-center p-2 border border-emerald-600/40 shadow-lg shrink-0 group-hover:scale-105 transition-transform">
                 <img 
                   src="/aks_official_logo.png" 
                   alt="AK's Elite Dental Clinic Emblem" 
@@ -34,7 +35,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAppointment }) => {
                   K.Pudur, Madurai • Dr. Khalidh Khan, MDS
                 </span>
               </div>
-            </div>
+            </Link>
 
             <p className="text-xs text-emerald-200/80 font-sans leading-relaxed">
               Madurai's specialized boutique clinic for clear aligners, aesthetic ceramic braces, painless single-visit root canals, and modern smile transformations led by Dr. Khalidh Khan.
@@ -53,13 +54,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAppointment }) => {
               Quick Navigation
             </h4>
             <ul className="space-y-2 text-xs text-emerald-200/80 font-sans">
-              <li><a href="#transformations" className="hover:text-amber-300 transition-colors">Verified Clinical Cases</a></li>
-              <li><a href="#treatments" className="hover:text-amber-300 transition-colors">8 Core Specialties</a></li>
-              <li><a href="#symptom-triage" className="hover:text-amber-300 transition-colors">Symptom & Treatment Triage</a></li>
-              <li><a href="#doctor" className="hover:text-amber-300 transition-colors">Dr. Khalidh Khan (MDS)</a></li>
-              <li><a href="#about" className="hover:text-amber-300 transition-colors">About Studio</a></li>
-              <li><a href="#reviews" className="hover:text-amber-300 transition-colors">Google Reviews (4.9 ★)</a></li>
-              <li><a href="#location" className="hover:text-amber-300 transition-colors">Location & Map</a></li>
+              <li><Link to="/" className="hover:text-amber-300 transition-colors">Home</Link></li>
+              <li><Link to="/services" className="hover:text-amber-300 transition-colors">8 Core Specialties & Treatments</Link></li>
+              <li><Link to="/gallery" className="hover:text-amber-300 transition-colors">Smile Transformation Studio</Link></li>
+              <li><Link to="/about" className="hover:text-amber-300 transition-colors">Dr. Khalidh Khan (MDS) & Clinic</Link></li>
+              <li><Link to="/contact" className="hover:text-amber-300 transition-colors">Location, Map & Timings</Link></li>
             </ul>
           </div>
 
