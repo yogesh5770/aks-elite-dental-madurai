@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Sparkles, Award, ShieldCheck, UserCheck, Calendar } from 'lucide-react';
+import { SEO } from '../components/common/SEO';
 import { DoctorSpotlight } from '../components/doctor/DoctorSpotlight';
 import { AboutSection } from '../components/about/AboutSection';
 import { WhyChooseUs } from '../components/why/WhyChooseUs';
@@ -12,6 +13,14 @@ interface AboutPageProps {
 export const AboutPage: React.FC<AboutPageProps> = ({ onOpenAppointment }) => {
   return (
     <div className="w-full bg-[#FAF8F5] min-h-screen">
+      {/* 0. Page-Specific SEO Metadata (Under 70 chars title, Under 150 chars description, Self-canonical) */}
+      <SEO
+        title="Dr. Khalidh Khan (MDS Orthodontist) | AK'S Elite Dental Madurai"
+        description="Meet Dr. Khalidh Khan (BDS, MDS Orthodontics) in K.Pudur, Madurai. iTero 3D intraoral scanner, Class-B sterilization, and personalized care."
+        canonical="https://www.aksdentalclinic.in/about"
+        ogImage="https://www.aksdentalclinic.in/clinic-photos/dr_khalidh_khan_suit.webp"
+      />
+
       {/* 1. Page Header & Breadcrumb */}
       <section className="bg-gradient-to-b from-[#061D15] to-[#0A3326] text-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8 border-b border-emerald-900/60 relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
@@ -78,3 +87,4 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenAppointment }) => {
     </div>
   );
 };
+

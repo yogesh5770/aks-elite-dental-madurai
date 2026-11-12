@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Clock, Star, Navigation } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Star, Navigation, MessageSquare, ExternalLink } from 'lucide-react';
 import { CLINIC_DATA } from '../../data/clinicData';
 
 interface FooterProps {
@@ -98,20 +98,65 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAppointment }) => {
                   {CLINIC_DATA.contact.phoneDisplay}
                 </a>
               </p>
-              <p className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-amber-400 shrink-0" />
-                <span>{CLINIC_DATA.contact.email}</span>
-              </p>
-              <div className="pt-2">
+              <div className="space-y-1">
+                <p className="flex items-center gap-2">
+                  <Mail className="w-4 h-4 text-amber-400 shrink-0" />
+                  <a 
+                    href={`mailto:${CLINIC_DATA.contact.email}?subject=Consultation%20Inquiry%20-%20AK%27s%20Elite%20Dental`}
+                    className="hover:text-amber-300 font-semibold underline decoration-amber-400/30 transition-colors"
+                    title="Send Email"
+                  >
+                    {CLINIC_DATA.contact.email}
+                  </a>
+                </p>
+                <a
+                  href={`https://mail.google.com/mail/?view=cm&fs=1&to=${CLINIC_DATA.contact.email}&su=Appointment+Consultation+Inquiry+-+AK%27s+Elite+Dental`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-[11px] text-amber-300 hover:text-white pl-6 underline font-medium"
+                >
+                  <span>Open directly in Gmail</span>
+                  <ExternalLink className="w-2.5 h-2.5" />
+                </a>
+              </div>
+
+              {/* Social Channels & Map */}
+              <div className="pt-2 flex flex-col gap-2">
                 <a
                   href={CLINIC_DATA.contact.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-900 hover:bg-emerald-800 text-amber-300 border border-emerald-700 text-xs font-medium transition-colors"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-900 hover:bg-emerald-800 text-amber-300 border border-emerald-700 text-xs font-medium transition-colors w-fit"
                 >
                   <Navigation className="w-3.5 h-3.5" />
                   <span>Open in Google Maps</span>
                 </a>
+
+                <div className="pt-2">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-white block mb-2">Connect on Social</span>
+                  <div className="flex items-center gap-2">
+                    <a
+                      href="https://www.instagram.com/aks_elite_dental_clinic/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-8 h-8 rounded-lg bg-emerald-900/90 hover:bg-emerald-800 border border-emerald-700/60 flex items-center justify-center text-amber-300 hover:text-white transition-colors"
+                      aria-label="Instagram Profile"
+                    >
+                      <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                      </svg>
+                    </a>
+                    <a
+                      href={`https://wa.me/${CLINIC_DATA.contact.whatsapp}?text=${encodeURIComponent("Hello AK's Elite Dental Clinic, I would like to book an appointment.")}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-8 h-8 rounded-lg bg-emerald-900/90 hover:bg-emerald-800 border border-emerald-700/60 flex items-center justify-center text-amber-300 hover:text-white transition-colors"
+                      aria-label="WhatsApp Hotline"
+                    >
+                      <MessageSquare className="w-4 h-4" />
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

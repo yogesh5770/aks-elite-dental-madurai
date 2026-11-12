@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Sparkles, ArrowRight, ShieldCheck, HelpCircle, Phone, Calendar } from 'lucide-react';
+import { SEO } from '../components/common/SEO';
 import { TreatmentsBento } from '../components/treatments/TreatmentsBento';
 import { SymptomTriage } from '../components/quiz/SymptomTriage';
 import { CLINIC_DATA } from '../data/clinicData';
@@ -12,6 +13,14 @@ interface ServicesPageProps {
 export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenAppointment }) => {
   return (
     <div className="w-full bg-[#FAF8F5] min-h-screen">
+      {/* 0. Page-Specific SEO Metadata (Under 70 chars title, Under 150 chars description, Self-canonical) */}
+      <SEO
+        title="Dental Treatments & Orthodontics in Madurai | AK'S Elite Dental"
+        description="Specialist treatments in K.Pudur, Madurai: 3D clear aligners, ceramic braces, single-sitting root canals & implants by Dr. Khalidh Khan (MDS)."
+        canonical="https://www.aksdentalclinic.in/services"
+        ogImage="https://www.aksdentalclinic.in/real-cases/aks_8_disciplines_poster.jpg"
+      />
+
       {/* 1. Page Header & Breadcrumb */}
       <section className="bg-gradient-to-b from-[#061D15] to-[#0A3326] text-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8 border-b border-emerald-900/60 relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
@@ -88,3 +97,4 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenAppointment })
     </div>
   );
 };
+

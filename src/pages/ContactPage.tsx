@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, MessageSquare, Clock, Calendar, Navigation } from 'lucide-react';
+import { SEO } from '../components/common/SEO';
 import { LocationSection } from '../components/location/LocationSection';
 import { AppointmentSection } from '../components/appointment/AppointmentSection';
 import { CLINIC_DATA } from '../data/clinicData';
@@ -8,6 +9,14 @@ import { CLINIC_DATA } from '../data/clinicData';
 export const ContactPage: React.FC = () => {
   return (
     <div className="w-full bg-[#FAF8F5] min-h-screen">
+      {/* 0. Page-Specific SEO Metadata (Under 70 chars title, Under 150 chars description, Self-canonical) */}
+      <SEO
+        title="Clinic Location & Appointments in K.Pudur | AK'S Elite Dental"
+        description="Visit AK'S Elite Dental Clinic at Alagar Complex, Surya Nagar Extn, K.Pudur, Madurai. Open Mon-Sat 9:30 AM-9 PM. Call +91 95387 23872."
+        canonical="https://www.aksdentalclinic.in/contact"
+        ogImage="https://www.aksdentalclinic.in/clinic-photos/aks_real_01.webp"
+      />
+
       {/* 1. Page Header & Breadcrumb */}
       <section className="bg-gradient-to-b from-[#061D15] to-[#0A3326] text-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8 border-b border-emerald-900/60 relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
@@ -90,3 +99,4 @@ export const ContactPage: React.FC = () => {
     </div>
   );
 };
+

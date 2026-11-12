@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles, ShieldCheck, Star, Award, HeartHandshake, CheckCircle2 } from 'lucide-react';
+import { SEO } from '../components/common/SEO';
 import { HeroSection } from '../components/hero/HeroSection';
 import { DoctorSpotlight } from '../components/doctor/DoctorSpotlight';
 import { ReviewsSection } from '../components/reviews/ReviewsSection';
@@ -14,6 +15,14 @@ interface HomePageProps {
 export const HomePage: React.FC<HomePageProps> = ({ onOpenAppointment }) => {
   return (
     <div className="w-full">
+      {/* 0. Page-Specific SEO Metadata (Under 70 chars title, Under 150 chars description, Self-canonical) */}
+      <SEO
+        title="AK'S ELITE DENTAL | Best Dental Clinic in K.Pudur, Madurai"
+        description="4.9★ rated dental clinic in K.Pudur, Madurai by Dr. Khalidh Khan (MDS). 3D clear aligners, painless root canals & implants. Call +91 95387 23872."
+        canonical="https://www.aksdentalclinic.in/"
+        ogImage="https://www.aksdentalclinic.in/hero-dental.webp"
+      />
+
       {/* 1. Hero Section */}
       <HeroSection onOpenAppointment={onOpenAppointment} />
 
@@ -202,3 +211,4 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAppointment }) => {
     </div>
   );
 };
+
