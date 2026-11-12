@@ -4,6 +4,7 @@ import { Sparkles, ArrowRight, ShieldCheck, HelpCircle, Phone, Calendar } from '
 import { SEO } from '../components/common/SEO';
 import { TreatmentsBento } from '../components/treatments/TreatmentsBento';
 import { SymptomTriage } from '../components/quiz/SymptomTriage';
+import { FAQSection } from '../components/common/FAQSection';
 import { CLINIC_DATA } from '../data/clinicData';
 
 interface ServicesPageProps {
@@ -93,6 +94,11 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenAppointment })
             </a>
           </div>
         </div>
+      </section>
+
+      {/* 5. Frequently Asked Questions (SEO Content & E-E-A-T Signals) */}
+      <section className="bg-white border-t border-emerald-950/5">
+        <FAQSection className="py-16" />
       </section>
     </div>
   );
