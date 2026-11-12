@@ -450,14 +450,16 @@ export const BeforeAfterStudio: React.FC<BeforeAfterStudioProps> = ({ onOpenAppo
                         <div className="relative flex-1 overflow-hidden">
                           <img 
                             src={c.beforeImage} 
-                            alt="Before" 
+                            alt={`${c.title} - Before treatment at AK'S Elite Dental Madurai`} 
+                            loading="lazy"
                             className="w-full h-full object-cover object-center"
                           />
                         </div>
                         <div className="relative flex-1 overflow-hidden">
                           <img 
                             src={c.afterImage} 
-                            alt="After" 
+                            alt={`${c.title} - After transformation at AK'S Elite Dental Madurai`} 
+                            loading="lazy"
                             className="w-full h-full object-cover object-center"
                           />
                         </div>
