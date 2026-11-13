@@ -16,7 +16,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenAppointment }) =
         title="Smile Transformations Before & After | AK'S Elite Dental Madurai"
         description="Verified clinical before-and-after smile cases in Madurai: clear aligners, braces, ceramic root canals & tooth replacement results."
         canonical="https://www.aksdentalclinic.in/gallery"
-        ogImage="https://www.aksdentalclinic.in/real-cases/cosmetic_smile_after.webp"
+        ogImage="https://www.aksdentalclinic.in/real-cases/cosmetic_smile_after.jpg"
       />
 
       {/* 1. Page Header & Breadcrumb */}

@@ -28,21 +28,21 @@ const pages = [
     canonical: 'https://www.aksdentalclinic.in/about',
     title: "Dr. Khalidh Khan (MDS Orthodontist) | AK'S Elite Dental Madurai",
     description: "Meet Dr. Khalidh Khan (BDS, MDS Orthodontics) in K.Pudur, Madurai. iTero 3D intraoral scanner, Class-B sterilization, and personalized care.",
-    ogImage: 'https://www.aksdentalclinic.in/clinic-photos/dr_khalidh_khan_suit.webp',
+    ogImage: 'https://www.aksdentalclinic.in/clinic-photos/dr_khalidh_khan_suit.jpg',
   },
   {
     folder: 'gallery',
     canonical: 'https://www.aksdentalclinic.in/gallery',
     title: "Smile Transformations Before & After | AK'S Elite Dental Madurai",
     description: "Verified clinical before-and-after smile cases in Madurai: clear aligners, braces, ceramic root canals & tooth replacement results.",
-    ogImage: 'https://www.aksdentalclinic.in/real-cases/cosmetic_smile_after.webp',
+    ogImage: 'https://www.aksdentalclinic.in/real-cases/cosmetic_smile_after.jpg',
   },
   {
     folder: 'contact',
     canonical: 'https://www.aksdentalclinic.in/contact',
     title: "Clinic Location & Appointments in K.Pudur | AK'S Elite Dental",
     description: "Visit AK'S Elite Dental Clinic at Alagar Complex, Surya Nagar Extn, K.Pudur, Madurai. Open Mon-Sat 9:30 AM-9 PM. Call +91 95387 23872.",
-    ogImage: 'https://www.aksdentalclinic.in/clinic-photos/aks_real_01.webp',
+    ogImage: 'https://www.aksdentalclinic.in/clinic-photos/aks_real_01.jpg',
   },
 ];
 
@@ -91,7 +91,13 @@ for (const p of pages) {
 
   pageHtml = pageHtml.replace(
     /<meta\s+property="og:image"\s+content="[^"]*"\s*\/?>/i,
-    `<meta property="og:image" content="${p.ogImage}" />`
+    `<meta property="og:image" content="${p.ogImage}" />\n    <meta property="og:image:type" content="image/jpeg" />`
+  );
+
+  // Replace Schema.org clinic image so structured data audits see distinct image
+  pageHtml = pageHtml.replace(
+    /"image":\s*"https:\/\/www\.aksdentalclinic\.in\/hero-dental\.(webp|jpg)"/i,
+    `"image": "${p.ogImage}"`
   );
 
   // Replace Twitter Card Tags

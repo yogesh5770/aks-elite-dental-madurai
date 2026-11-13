@@ -20,7 +20,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAppointment }) => {
         title="AK'S ELITE DENTAL | Best Dental Clinic in K.Pudur, Madurai"
         description="4.9★ rated dental clinic in K.Pudur, Madurai by Dr. Khalidh Khan (MDS). 3D clear aligners, painless root canals & implants. Call +91 95387 23872."
         canonical="https://www.aksdentalclinic.in/"
-        ogImage="https://www.aksdentalclinic.in/hero-dental.webp"
+        ogImage="https://www.aksdentalclinic.in/hero-dental.jpg"
       />
 
       {/* 1. Hero Section */}

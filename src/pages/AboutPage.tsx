@@ -18,7 +18,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenAppointment }) => {
         title="Dr. Khalidh Khan (MDS Orthodontist) | AK'S Elite Dental Madurai"
         description="Meet Dr. Khalidh Khan (BDS, MDS Orthodontics) in K.Pudur, Madurai. iTero 3D intraoral scanner, Class-B sterilization, and personalized care."
         canonical="https://www.aksdentalclinic.in/about"
-        ogImage="https://www.aksdentalclinic.in/clinic-photos/dr_khalidh_khan_suit.webp"
+        ogImage="https://www.aksdentalclinic.in/clinic-photos/dr_khalidh_khan_suit.jpg"
       />
 
       {/* 1. Page Header & Breadcrumb */}
