@@ -9,12 +9,12 @@ import { CLINIC_DATA } from '../data/clinicData';
 export const ContactPage: React.FC = () => {
   return (
     <div className="w-full bg-[#FAF8F5] min-h-screen">
-      {/* 0. Page-Specific SEO Metadata (Under 70 chars title, Under 150 chars description, Self-canonical) */}
+      {/* 0. Page-Specific SEO Metadata (Rank #1 Keyword Mapped - Under 70 chars title & Under 150 chars description) */}
       <SEO
-        title="Clinic Location & Appointments in K.Pudur | AK'S Elite Dental"
-        description="Visit AK'S Elite Dental Clinic at Alagar Complex, Surya Nagar Extn, K.Pudur, Madurai. Open Mon-Sat 9:30 AM-9 PM. Call +91 95387 23872."
+        title="Dental Clinic in Madurai Near Me | K.Pudur | AK'S Elite Dental"
+        description="Visit AK'S Elite Dental Clinic in K.Pudur, Madurai near Surya Nagar. Top dental hospital for emergency care, aligners & root canals: +91 95387 23872."
         canonical="https://www.aksdentalclinic.in/contact"
-        ogImage="https://www.aksdentalclinic.in/clinic-photos/aks_real_01.jpg"
+        ogImage="https://www.aksdentalclinic.in/og/contact-og.jpg"
       />
 
       {/* 1. Page Header & Breadcrumb */}

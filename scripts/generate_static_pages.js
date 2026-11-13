@@ -19,30 +19,30 @@ const pages = [
   {
     folder: 'services',
     canonical: 'https://www.aksdentalclinic.in/services',
-    title: "Dental Treatments & Orthodontics in Madurai | AK'S Elite Dental",
-    description: "Specialist treatments in K.Pudur, Madurai: 3D clear aligners, ceramic braces, single-sitting root canals & implants by Dr. Khalidh Khan (MDS).",
-    ogImage: 'https://www.aksdentalclinic.in/real-cases/aks_8_disciplines_poster.jpg',
+    title: "Invisalign & Aligner Specialist in Madurai | AK'S Elite Dental",
+    description: "Top Invisalign specialist & orthodontist in Madurai. Transparent aligner treatment, braces clip cost, painless root canal & cleaning: 95387 23872.",
+    ogImage: 'https://www.aksdentalclinic.in/og/services-og.jpg',
   },
   {
     folder: 'about',
     canonical: 'https://www.aksdentalclinic.in/about',
-    title: "Dr. Khalidh Khan (MDS Orthodontist) | AK'S Elite Dental Madurai",
-    description: "Meet Dr. Khalidh Khan (BDS, MDS Orthodontics) in K.Pudur, Madurai. iTero 3D intraoral scanner, Class-B sterilization, and personalized care.",
-    ogImage: 'https://www.aksdentalclinic.in/clinic-photos/dr_khalidh_khan_suit.jpg',
+    title: "Best Orthodontist & Dental Specialist in Madurai | Dr KK",
+    description: "Meet Dr. Khalidh Khan (MDS), top dental specialist & orthodontist in Madurai. Certified Invisalign provider with 1,000+ aligners. Call 95387 23872.",
+    ogImage: 'https://www.aksdentalclinic.in/og/about-og.jpg',
   },
   {
     folder: 'gallery',
     canonical: 'https://www.aksdentalclinic.in/gallery',
-    title: "Smile Transformations Before & After | AK'S Elite Dental Madurai",
-    description: "Verified clinical before-and-after smile cases in Madurai: clear aligners, braces, ceramic root canals & tooth replacement results.",
-    ogImage: 'https://www.aksdentalclinic.in/real-cases/cosmetic_smile_after.jpg',
+    title: "Invisalign & Braces Before After in Madurai | AK'S Dental",
+    description: "Real patient results in Madurai: Invisalign, teeth aligners, braces clip treatment & smile makeovers by Dr. Khalidh Khan. View verified smile cases.",
+    ogImage: 'https://www.aksdentalclinic.in/og/gallery-og.jpg',
   },
   {
     folder: 'contact',
     canonical: 'https://www.aksdentalclinic.in/contact',
-    title: "Clinic Location & Appointments in K.Pudur | AK'S Elite Dental",
-    description: "Visit AK'S Elite Dental Clinic at Alagar Complex, Surya Nagar Extn, K.Pudur, Madurai. Open Mon-Sat 9:30 AM-9 PM. Call +91 95387 23872.",
-    ogImage: 'https://www.aksdentalclinic.in/clinic-photos/aks_real_01.jpg',
+    title: "Dental Clinic in Madurai Near Me | K.Pudur | AK'S Elite Dental",
+    description: "Visit AK'S Elite Dental Clinic in K.Pudur, Madurai near Surya Nagar. Top dental hospital for emergency care, aligners & root canals: +91 95387 23872.",
+    ogImage: 'https://www.aksdentalclinic.in/og/contact-og.jpg',
   },
 ];
 
@@ -91,12 +91,22 @@ for (const p of pages) {
 
   pageHtml = pageHtml.replace(
     /<meta\s+property="og:image"\s+content="[^"]*"\s*\/?>/i,
-    `<meta property="og:image" content="${p.ogImage}" />\n    <meta property="og:image:type" content="image/jpeg" />`
+    `<meta property="og:image" content="${p.ogImage}" />`
+  );
+
+  pageHtml = pageHtml.replace(
+    /<meta\s+property="og:image:secure_url"\s+content="[^"]*"\s*\/?>/i,
+    `<meta property="og:image:secure_url" content="${p.ogImage}" />`
+  );
+
+  pageHtml = pageHtml.replace(
+    /<meta\s+property="og:image:alt"\s+content="[^"]*"\s*\/?>/i,
+    `<meta property="og:image:alt" content="${p.title}" />`
   );
 
   // Replace Schema.org clinic image so structured data audits see distinct image
   pageHtml = pageHtml.replace(
-    /"image":\s*"https:\/\/www\.aksdentalclinic\.in\/hero-dental\.(webp|jpg)"/i,
+    /"image":\s*"https:\/\/www\.aksdentalclinic\.in\/og\/home-og\.jpg"/i,
     `"image": "${p.ogImage}"`
   );
 

@@ -11,12 +11,12 @@ interface GalleryPageProps {
 export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenAppointment }) => {
   return (
     <div className="w-full bg-[#FAF8F5] min-h-screen">
-      {/* 0. Page-Specific SEO Metadata (Under 70 chars title, Under 150 chars description, Self-canonical) */}
+      {/* 0. Page-Specific SEO Metadata (Rank #1 Keyword Mapped - Under 70 chars title & Under 150 chars description) */}
       <SEO
-        title="Smile Transformations Before & After | AK'S Elite Dental Madurai"
-        description="Verified clinical before-and-after smile cases in Madurai: clear aligners, braces, ceramic root canals & tooth replacement results."
+        title="Invisalign & Braces Before After in Madurai | AK'S Dental"
+        description="Real patient results in Madurai: Invisalign, teeth aligners, braces clip treatment & smile makeovers by Dr. Khalidh Khan. View verified smile cases."
         canonical="https://www.aksdentalclinic.in/gallery"
-        ogImage="https://www.aksdentalclinic.in/real-cases/cosmetic_smile_after.jpg"
+        ogImage="https://www.aksdentalclinic.in/og/gallery-og.jpg"
       />
 
       {/* 1. Page Header & Breadcrumb */}

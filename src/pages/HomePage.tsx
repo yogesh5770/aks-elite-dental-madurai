@@ -15,12 +15,12 @@ interface HomePageProps {
 export const HomePage: React.FC<HomePageProps> = ({ onOpenAppointment }) => {
   return (
     <div className="w-full">
-      {/* 0. Page-Specific SEO Metadata (Under 70 chars title, Under 150 chars description, Self-canonical) */}
+      {/* 0. Page-Specific SEO Metadata (Rank #1 Keyword Mapped - Under 70 chars title & Under 150 chars description) */}
       <SEO
-        title="AK'S ELITE DENTAL | Best Dental Clinic in K.Pudur, Madurai"
-        description="4.9★ rated dental clinic in K.Pudur, Madurai by Dr. Khalidh Khan (MDS). 3D clear aligners, painless root canals & implants. Call +91 95387 23872."
+        title="Best Dental Clinic & Hospital in Madurai | AK'S Elite Dental"
+        description="Top dental hospital in Madurai by Dr. Khalidh Khan (MDS). Certified Invisalign provider, braces clip treatment and painless RCT. Call +91 95387 23872."
         canonical="https://www.aksdentalclinic.in/"
-        ogImage="https://www.aksdentalclinic.in/hero-dental.jpg"
+        ogImage="https://www.aksdentalclinic.in/og/home-og.jpg"
       />
 
       {/* 1. Hero Section */}

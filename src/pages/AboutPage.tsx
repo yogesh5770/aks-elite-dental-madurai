@@ -13,12 +13,12 @@ interface AboutPageProps {
 export const AboutPage: React.FC<AboutPageProps> = ({ onOpenAppointment }) => {
   return (
     <div className="w-full bg-[#FAF8F5] min-h-screen">
-      {/* 0. Page-Specific SEO Metadata (Under 70 chars title, Under 150 chars description, Self-canonical) */}
+      {/* 0. Page-Specific SEO Metadata (Rank #1 Keyword Mapped - Under 70 chars title & Under 150 chars description) */}
       <SEO
-        title="Dr. Khalidh Khan (MDS Orthodontist) | AK'S Elite Dental Madurai"
-        description="Meet Dr. Khalidh Khan (BDS, MDS Orthodontics) in K.Pudur, Madurai. iTero 3D intraoral scanner, Class-B sterilization, and personalized care."
+        title="Best Orthodontist & Dental Specialist in Madurai | Dr KK"
+        description="Meet Dr. Khalidh Khan (MDS), top dental specialist & orthodontist in Madurai. Certified Invisalign provider with 1,000+ aligners. Call 95387 23872."
         canonical="https://www.aksdentalclinic.in/about"
-        ogImage="https://www.aksdentalclinic.in/clinic-photos/dr_khalidh_khan_suit.jpg"
+        ogImage="https://www.aksdentalclinic.in/og/about-og.jpg"
       />
 
       {/* 1. Page Header & Breadcrumb */}

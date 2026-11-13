@@ -14,12 +14,12 @@ interface ServicesPageProps {
 export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenAppointment }) => {
   return (
     <div className="w-full bg-[#FAF8F5] min-h-screen">
-      {/* 0. Page-Specific SEO Metadata (Under 70 chars title, Under 150 chars description, Self-canonical) */}
+      {/* 0. Page-Specific SEO Metadata (Rank #1 Keyword Mapped - Under 70 chars title & Under 150 chars description) */}
       <SEO
-        title="Dental Treatments & Orthodontics in Madurai | AK'S Elite Dental"
-        description="Specialist treatments in K.Pudur, Madurai: 3D clear aligners, ceramic braces, single-sitting root canals & implants by Dr. Khalidh Khan (MDS)."
+        title="Invisalign & Aligner Specialist in Madurai | AK'S Elite Dental"
+        description="Top Invisalign specialist & orthodontist in Madurai. Transparent aligner treatment, braces clip cost, painless root canal & cleaning: 95387 23872."
         canonical="https://www.aksdentalclinic.in/services"
-        ogImage="https://www.aksdentalclinic.in/real-cases/aks_8_disciplines_poster.jpg"
+        ogImage="https://www.aksdentalclinic.in/og/services-og.jpg"
       />
 
       {/* 1. Page Header & Breadcrumb */}

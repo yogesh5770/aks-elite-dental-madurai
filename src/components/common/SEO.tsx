@@ -12,7 +12,7 @@ export const SEO: React.FC<SEOProps> = ({
   title,
   description,
   canonical,
-  ogImage = 'https://www.aksdentalclinic.in/hero-dental.webp',
+  ogImage = 'https://www.aksdentalclinic.in/og/home-og.jpg',
   ogType = 'website',
 }) => {
   useEffect(() => {
@@ -58,6 +58,11 @@ export const SEO: React.FC<SEOProps> = ({
     setOgTag('og:description', description);
     setOgTag('og:url', canonical);
     setOgTag('og:image', ogImage);
+    setOgTag('og:image:secure_url', ogImage);
+    setOgTag('og:image:type', 'image/jpeg');
+    setOgTag('og:image:width', '1200');
+    setOgTag('og:image:height', '630');
+    setOgTag('og:image:alt', title);
     setOgTag('og:type', ogType);
 
     // 6. Update Twitter Card Tags
