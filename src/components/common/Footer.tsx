@@ -174,11 +174,28 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAppointment }) => {
         </div>
 
         {/* Bottom */}
-        <div className="pt-12 mt-12 border-t border-emerald-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-emerald-400/60 font-sans">
+        <div className="pt-8 mt-10 border-t border-emerald-900 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-emerald-400/70 font-sans text-center md:text-left">
           <p>© {new Date().getFullYear()} AKS Elite Dental Clinic and Orthodontic Centre. All Rights Reserved.</p>
-          <p className="text-[11px] text-amber-400/80">
-            Surya Nagar Extn, K.Pudur • Madurai • Tamil Nadu 625007
-          </p>
+          
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[11px]">
+            <p className="text-amber-400/80">
+              Surya Nagar Extn, K.Pudur • Madurai • 625007
+            </p>
+            <span className="text-emerald-700 hidden sm:inline">•</span>
+            <p className="text-emerald-300/80">
+              Website &amp; SEO by{' '}
+              <a
+                href="https://yogeshportfolio.pages.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-amber-300 hover:text-white font-semibold underline underline-offset-2 transition-colors inline-flex items-center gap-1"
+                title="Yogesh | AI Native Product Engineer"
+              >
+                <span>Yogesh (AI Native Product Engineer)</span>
+                <ExternalLink className="w-2.5 h-2.5 opacity-70" />
+              </a>
+            </p>
+          </div>
         </div>
 
       </div>
