@@ -55,9 +55,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAppointment }) => {
             </h4>
             <ul className="space-y-2 text-xs text-emerald-200/80 font-sans">
               <li><Link to="/" className="hover:text-amber-300 transition-colors">Home</Link></li>
-              <li><Link to="/services" className="hover:text-amber-300 transition-colors">8 Core Specialties & Treatments</Link></li>
+              <li><Link to="/services" className="hover:text-amber-300 transition-colors">9 Clinical Specialties Hub</Link></li>
               <li><Link to="/gallery" className="hover:text-amber-300 transition-colors">Smile Transformation Studio</Link></li>
               <li><Link to="/about" className="hover:text-amber-300 transition-colors">Dr. Khalidh Khan (MDS) & Clinic</Link></li>
+              <li><Link to="/blog" className="hover:text-amber-300 transition-colors">Patient Education & Blog</Link></li>
               <li><Link to="/contact" className="hover:text-amber-300 transition-colors">Location, Map & Timings</Link></li>
             </ul>
           </div>
@@ -163,13 +164,22 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAppointment }) => {
 
         </div>
 
-        {/* Local Area Coverage & Search Tags */}
+        {/* Local Area Coverage & Search Tags with Direct Links */}
         <div className="pt-8 mt-10 border-t border-emerald-900/60 text-xs text-emerald-300/70 font-sans space-y-2">
           <p className="leading-relaxed">
             <strong className="text-white">Areas Served in Madurai:</strong> K.Pudur • Surya Nagar • Suriya Nagar Extn • Mattuthavani • Alagar Kovil Road • Othakadai • Iyer Bungalow • Surveyor Colony • Tallakulam • Goripalayam • Anna Nagar • KK Nagar • Reserve Line • Bibikulam • Madurai North.
           </p>
           <p className="leading-relaxed">
-            <strong className="text-white">Specialist Dental Care:</strong> Invisible Clear Aligners Madurai • Ceramic & Self-Ligating Braces • Single Sitting Rotary Root Canal Treatment (RCT) • Permanent Titanium Dental Implants • Cosmetic Smile Designing & Veneers • Ultrasonic Tartar Scaling • Painless Pediatric Dentistry.
+            <strong className="text-white">9 Clinical Specialties in Madurai:</strong>{' '}
+            <Link to="/services/orthodontics" className="text-emerald-200 hover:text-amber-300 underline underline-offset-2">Orthodontics &amp; Braces</Link> •{' '}
+            <Link to="/services/general-dentistry" className="text-emerald-200 hover:text-amber-300 underline underline-offset-2">General Dentistry &amp; Cleaning</Link> •{' '}
+            <Link to="/services/endodontics" className="text-emerald-200 hover:text-amber-300 underline underline-offset-2">Single-Sitting Root Canal (RCT)</Link> •{' '}
+            <Link to="/services/prosthodontics" className="text-emerald-200 hover:text-amber-300 underline underline-offset-2">Dental Implants &amp; Zirconia Crowns</Link> •{' '}
+            <Link to="/services/cosmetic-dentistry" className="text-emerald-200 hover:text-amber-300 underline underline-offset-2">Cosmetic Smile Designing &amp; Veneers</Link> •{' '}
+            <Link to="/services/preventive-dentistry" className="text-emerald-200 hover:text-amber-300 underline underline-offset-2">Preventive Dentistry &amp; Fluoride</Link> •{' '}
+            <Link to="/services/oral-maxillofacial-surgery" className="text-emerald-200 hover:text-amber-300 underline underline-offset-2">Wisdom Tooth Surgery</Link> •{' '}
+            <Link to="/services/periodontics" className="text-emerald-200 hover:text-amber-300 underline underline-offset-2">Gum Care &amp; Periodontics</Link> •{' '}
+            <Link to="/services/pediatric-dentistry" className="text-emerald-200 hover:text-amber-300 underline underline-offset-2">Pediatric Kids Dentistry</Link>.
           </p>
         </div>
 

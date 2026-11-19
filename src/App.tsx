@@ -9,6 +9,9 @@ import { AppointmentModal } from './components/appointment/AppointmentModal';
 
 import { HomePage } from './pages/HomePage';
 import { ServicesPage } from './pages/ServicesPage';
+import { ServiceDetailPage } from './pages/ServiceDetailPage';
+import { BlogPage } from './pages/BlogPage';
+import { BlogPostPage } from './pages/BlogPostPage';
 import { AboutPage } from './pages/AboutPage';
 import { GalleryPage } from './pages/GalleryPage';
 import { ContactPage } from './pages/ContactPage';
@@ -35,6 +38,9 @@ export const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<HomePage onOpenAppointment={handleOpenAppointment} />} />
             <Route path="/services" element={<ServicesPage onOpenAppointment={handleOpenAppointment} />} />
+            <Route path="/services/:slug" element={<ServiceDetailPage onOpenAppointment={handleOpenAppointment} />} />
+            <Route path="/blog" element={<BlogPage onOpenAppointment={handleOpenAppointment} />} />
+            <Route path="/blog/:slug" element={<BlogPostPage onOpenAppointment={handleOpenAppointment} />} />
             <Route path="/about" element={<AboutPage onOpenAppointment={handleOpenAppointment} />} />
             <Route path="/gallery" element={<GalleryPage onOpenAppointment={handleOpenAppointment} />} />
             <Route path="/contact" element={<ContactPage />} />

@@ -16,6 +16,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAppointment }) => {
     { label: "Specialties", to: "/services" },
     { label: "About & Doctors", to: "/about" },
     { label: "Smile Gallery", to: "/gallery" },
+    { label: "Blog", to: "/blog" },
     { label: "Location & Contact", to: "/contact" },
   ];
 

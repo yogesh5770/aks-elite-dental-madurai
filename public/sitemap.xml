@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- 1. Core Pages -->
   <url>
     <loc>https://www.aksdentalclinic.in/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -11,39 +13,118 @@
       <image:title>AK&apos;s Elite Dental Clinic and Orthodontic Centre in K.Pudur, Madurai</image:title>
       <image:caption>Specialist Orthodontics, 3D Clear Aligners, and Dental Clinic in K.Pudur, Madurai</image:caption>
     </image:image>
-    <image:image>
-      <image:loc>https://www.aksdentalclinic.in/clinic-photos/dr_khalidh_khan_suit.webp</image:loc>
-      <image:title>Dr. Khalidh Khan (BDS, MDS Orthodontics) - Chief Specialist</image:title>
-      <image:caption>Consultant Orthodontist &amp; Dentofacial Orthopaedics Specialist at AK&apos;s Elite Dental Madurai</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.aksdentalclinic.in/clinic-photos/itero_dr_khalidh_suit.webp</image:loc>
-      <image:title>iTero 3D Digital Intraoral Scanning Suite</image:title>
-      <image:caption>3D Intraoral digital scanning for Invisalign and clear aligners in Madurai</image:caption>
-    </image:image>
   </url>
   <url>
     <loc>https://www.aksdentalclinic.in/services</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.aksdentalclinic.in/gallery</loc>
-    <lastmod>2026-11-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
   <url>
     <loc>https://www.aksdentalclinic.in/about</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.aksdentalclinic.in/gallery</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aksdentalclinic.in/contact</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.aksdentalclinic.in/blog</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- 2. The 9 Dedicated Clinical Specialty Pages -->
+  <url>
+    <loc>https://www.aksdentalclinic.in/services/orthodontics</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aksdentalclinic.in/services/general-dentistry</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.aksdentalclinic.in/services/endodontics</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aksdentalclinic.in/services/prosthodontics</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aksdentalclinic.in/services/cosmetic-dentistry</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.aksdentalclinic.in/services/preventive-dentistry</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.aksdentalclinic.in/services/oral-maxillofacial-surgery</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.aksdentalclinic.in/services/periodontics</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.aksdentalclinic.in/services/pediatric-dentistry</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- 3. Dental Health Guides & Patient Blog Posts -->
+  <url>
+    <loc>https://www.aksdentalclinic.in/blog/clear-aligners-vs-metal-braces-cost-madurai</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.aksdentalclinic.in/contact</loc>
-    <lastmod>2026-11-11</lastmod>
+    <loc>https://www.aksdentalclinic.in/blog/single-sitting-root-canal-pain-relief-facts</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.aksdentalclinic.in/blog/dental-implants-full-mouth-restoration-guide</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.aksdentalclinic.in/blog/parents-guide-child-milk-teeth-care</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>

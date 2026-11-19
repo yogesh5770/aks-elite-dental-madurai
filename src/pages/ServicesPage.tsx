@@ -1,11 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, ArrowRight, ShieldCheck, HelpCircle, Phone, Calendar } from 'lucide-react';
+import { 
+  Sparkles, 
+  ArrowRight, 
+  ShieldCheck, 
+  HelpCircle, 
+  Phone, 
+  Calendar,
+  Smile,
+  Shield,
+  Zap,
+  Award,
+  HeartPulse,
+  Baby,
+  Activity,
+  CheckCircle2,
+  Check
+} from 'lucide-react';
 import { SEO } from '../components/common/SEO';
 import { TreatmentsBento } from '../components/treatments/TreatmentsBento';
 import { SymptomTriage } from '../components/quiz/SymptomTriage';
 import { FAQSection } from '../components/common/FAQSection';
 import { CLINIC_DATA } from '../data/clinicData';
+import { SERVICES_ARCHITECTURE_DATA } from '../data/servicesArchitectureData';
 
 interface ServicesPageProps {
   onOpenAppointment: (treatmentTitle?: string) => void;
@@ -49,8 +66,83 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenAppointment })
         <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
       </section>
 
-      {/* 2. Full Treatments Bento (All 8 Disciplines) */}
-      <section className="py-12">
+      {/* 2. 9 Clinical Specialty Departments (Hub-and-Spoke Navigation) */}
+      <section className="py-14 sm:py-18 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <span className="text-xs uppercase tracking-widest font-bold text-emerald-800 bg-emerald-100/70 px-3 py-1 rounded-full border border-emerald-200">
+            Dedicated Clinical Departments
+          </span>
+          <h2 className="text-2xl sm:text-4xl font-bold font-serif text-slate-900 mt-3">
+            Explore Our 9 Specialty Dental Departments
+          </h2>
+          <p className="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Click into any department below for comprehensive clinical treatment breakdowns, technology details, before-and-after cases, and transparent cost guidelines in K.Pudur, Madurai.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {Object.values(SERVICES_ARCHITECTURE_DATA).map((dept) => (
+            <div
+              key={dept.slug}
+              className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs hover:shadow-xl transition-all hover:border-emerald-700/60 flex flex-col justify-between group hover:-translate-y-1"
+            >
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-3">
+                  <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-800 border border-emerald-200/80">
+                    {dept.shortTitle}
+                  </span>
+                  <span className="text-[11px] text-amber-600 font-semibold flex items-center gap-1">
+                    ★ Specialist Care
+                  </span>
+                </div>
+
+                <h3 className="text-lg font-bold font-serif text-slate-900 group-hover:text-emerald-800 transition-colors mb-2">
+                  <Link to={`/services/${dept.slug}`}>
+                    {dept.name}
+                  </Link>
+                </h3>
+
+                <p className="text-xs text-slate-600 leading-relaxed mb-4">
+                  {dept.tagline}
+                </p>
+
+                <div className="space-y-1.5 border-t border-slate-100 pt-3 mb-4">
+                  <span className="text-[11px] font-bold text-slate-700 block uppercase tracking-wider">
+                    Key Procedures:
+                  </span>
+                  {dept.subtopics.map((sub, i) => (
+                    <div key={i} className="flex items-start gap-1.5 text-xs text-slate-600">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                      <span className="line-clamp-1">{sub.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+                <Link
+                  to={`/services/${dept.slug}`}
+                  className="text-xs font-bold text-emerald-800 group-hover:text-emerald-950 inline-flex items-center gap-1 hover:underline underline-offset-2"
+                >
+                  <span>Department Details</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+
+                <button
+                  type="button"
+                  onClick={() => onOpenAppointment(dept.name)}
+                  className="px-3 py-1.5 rounded-lg bg-emerald-900 text-amber-300 hover:bg-emerald-800 font-semibold text-[11px] transition-colors"
+                >
+                  Book Slot
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 3. Full Treatments Bento (Detailed Technical Cards) */}
+      <section className="py-12 bg-slate-50 border-t border-slate-200">
         <TreatmentsBento onOpenAppointment={onOpenAppointment} />
       </section>
 
