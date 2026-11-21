@@ -46,7 +46,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
   const [activeSectionIndex, setActiveSectionIndex] = useState<number>(0);
 
   if (!seoData && !archData) {
-    return <Navigate to="/services" replace />;
+    return <Navigate to="/" replace />;
   }
 
   // Unified data
@@ -87,12 +87,6 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
           {
             "@type": "ListItem",
             "position": 2,
-            "name": "Services",
-            "item": "https://www.aksdentalclinic.in/services"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
             "name": pageH1,
             "item": pageCanonical
           }
@@ -154,8 +148,6 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-xs text-emerald-300/80 mb-6 font-sans">
             <Link to="/" className="hover:text-white transition-colors">Home</Link>
-            <span>/</span>
-            <Link to="/services" className="hover:text-white transition-colors">Specialties</Link>
             <span>/</span>
             <span className="text-amber-300 font-semibold">{pageH1}</span>
           </nav>
@@ -492,13 +484,6 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
                 Other Specialist Treatments at AK'S Elite Dental
               </h2>
             </div>
-            <Link
-              to="/services"
-              className="text-xs font-bold text-emerald-800 hover:text-emerald-950 inline-flex items-center gap-1.5"
-            >
-              <span>View All 9 Specialties Hub</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

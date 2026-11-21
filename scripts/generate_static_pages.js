@@ -16,14 +16,7 @@ if (!fs.existsSync(baseHtmlPath)) {
 const baseHtml = fs.readFileSync(baseHtmlPath, 'utf8');
 
 const pages = [
-  // 1. Core Pages
-  {
-    targetFile: 'services.html',
-    canonical: 'https://www.aksdentalclinic.in/services',
-    title: "Invisalign & Aligner Specialist in Madurai | AK'S Elite Dental",
-    description: "Top Invisalign specialist & orthodontist in Madurai. Transparent aligner treatment, braces clip cost, painless root canal & cleaning: 95387 23872.",
-    ogImage: 'https://www.aksdentalclinic.in/og/services-og.jpg',
-  },
+  // 1. Core Pages (No separate /services page per SEO architecture)
   {
     targetFile: 'about.html',
     canonical: 'https://www.aksdentalclinic.in/about',

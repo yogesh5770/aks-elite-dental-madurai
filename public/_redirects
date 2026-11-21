@@ -1,4 +1,12 @@
 # AK'S Elite Dental Clinic - Cloudflare Pages Redirects & Routing
+# 301 Permanent Redirects: No standalone /services page (consolidate directly to primary specialty)
+/services                         /orthodontics-madurai/           301
+/services/                        /orthodontics-madurai/           301
+/speciality                       /orthodontics-madurai/           301
+/speciality/                      /orthodontics-madurai/           301
+/specialities                     /orthodontics-madurai/           301
+/specialities/                    /orthodontics-madurai/           301
+
 # 301 Permanent Redirects: Consolidate legacy service URLs to official Madurai location pages
 /services/orthodontics            /orthodontics-madurai/           301
 /services/orthodontics/           /orthodontics-madurai/           301

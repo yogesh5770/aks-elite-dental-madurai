@@ -55,7 +55,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAppointment }) => {
             </h4>
             <ul className="space-y-2 text-xs text-emerald-200/80 font-sans">
               <li><Link to="/" className="hover:text-amber-300 transition-colors">Home</Link></li>
-              <li><Link to="/services" className="hover:text-amber-300 transition-colors">9 Clinical Specialties Hub</Link></li>
+              <li><Link to="/orthodontics-madurai/" className="hover:text-amber-300 transition-colors">Orthodontics &amp; Braces</Link></li>
+              <li><Link to="/root-canal-treatment-madurai/" className="hover:text-amber-300 transition-colors">Root Canal (RCT)</Link></li>
               <li><Link to="/gallery" className="hover:text-amber-300 transition-colors">Smile Transformation Studio</Link></li>
               <li><Link to="/about" className="hover:text-amber-300 transition-colors">Dr. Khalidh Khan (MDS) & Clinic</Link></li>
               <li><Link to="/blog" className="hover:text-amber-300 transition-colors">Patient Education & Blog</Link></li>

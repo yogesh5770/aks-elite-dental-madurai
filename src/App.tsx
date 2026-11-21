@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Navbar } from './components/common/Navbar';
 import { Footer } from './components/common/Footer';
 import { MobileStickyBar } from './components/common/MobileStickyBar';
@@ -8,7 +8,6 @@ import { ScrollToTop } from './components/common/ScrollToTop';
 import { AppointmentModal } from './components/appointment/AppointmentModal';
 
 import { HomePage } from './pages/HomePage';
-import { ServicesPage } from './pages/ServicesPage';
 import { ServiceDetailPage } from './pages/ServiceDetailPage';
 import { BlogPage } from './pages/BlogPage';
 import { BlogPostPage } from './pages/BlogPostPage';
@@ -58,8 +57,13 @@ export const App: React.FC = () => {
             <Route path="/periodontics-madurai" element={<ServiceDetailPage serviceSlug="periodontics-madurai" onOpenAppointment={handleOpenAppointment} />} />
             <Route path="/periodontics-madurai/" element={<ServiceDetailPage serviceSlug="periodontics-madurai" onOpenAppointment={handleOpenAppointment} />} />
 
-            {/* Hierarchical Service Routes */}
-            <Route path="/services" element={<ServicesPage onOpenAppointment={handleOpenAppointment} />} />
+            {/* Redirect /services and aliases to primary specialty per SEO structure */}
+            <Route path="/services" element={<Navigate to="/orthodontics-madurai/" replace />} />
+            <Route path="/services/" element={<Navigate to="/orthodontics-madurai/" replace />} />
+            <Route path="/speciality" element={<Navigate to="/orthodontics-madurai/" replace />} />
+            <Route path="/speciality/" element={<Navigate to="/orthodontics-madurai/" replace />} />
+            <Route path="/specialities" element={<Navigate to="/orthodontics-madurai/" replace />} />
+            <Route path="/specialities/" element={<Navigate to="/orthodontics-madurai/" replace />} />
             <Route path="/services/:slug" element={<ServiceDetailPage onOpenAppointment={handleOpenAppointment} />} />
             <Route path="/blog" element={<BlogPage onOpenAppointment={handleOpenAppointment} />} />
             <Route path="/blog/:slug" element={<BlogPostPage onOpenAppointment={handleOpenAppointment} />} />

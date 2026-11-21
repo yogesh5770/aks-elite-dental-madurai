@@ -1,19 +1,81 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Phone, Clock, Menu, X, Star, MessageSquare, Calendar, ChevronRight, Award } from 'lucide-react';
+import { Phone, Clock, Menu, X, Star, MessageSquare, Calendar, ChevronRight, ChevronDown, Award } from 'lucide-react';
 import { CLINIC_DATA } from '../../data/clinicData';
 
 interface NavbarProps {
   onOpenAppointment: (treatment?: string) => void;
 }
 
+export const SPECIALTY_SUBMENU = [
+  { 
+    label: "Orthodontics & Braces", 
+    desc: "Invisalign, Metal & Ceramic Braces", 
+    to: "/orthodontics-madurai/",
+    icon: "🦷"
+  },
+  { 
+    label: "General Dentistry", 
+    desc: "Routine Exams, Scaling & Fillings", 
+    to: "/general-dentistry-madurai/",
+    icon: "✨"
+  },
+  { 
+    label: "Root Canal Treatment (RCT)", 
+    desc: "Painless Single-Sitting RCT & Crowns", 
+    to: "/root-canal-treatment-madurai/",
+    icon: "⚡"
+  },
+  { 
+    label: "Prosthodontics & Implants", 
+    desc: "Dental Implants, Zirconia Crowns & Bridges", 
+    to: "/prosthodontics-madurai/",
+    icon: "💎"
+  },
+  { 
+    label: "Cosmetic Dentistry", 
+    desc: "Porcelain Veneers & Laser Whitening", 
+    to: "/cosmetic-dentistry-madurai/",
+    icon: "🌟"
+  },
+  { 
+    label: "Preventive Dentistry", 
+    desc: "Fluoride, Sealants & Cavity Checkups", 
+    to: "/preventive-dentistry-madurai/",
+    icon: "🛡️"
+  },
+  { 
+    label: "Oral & Maxillofacial Surgery", 
+    desc: "Impacted Wisdom Teeth & Facial Trauma", 
+    to: "/oral-maxillofacial-surgery-madurai/",
+    icon: "🏥"
+  },
+  { 
+    label: "Pediatric Dentistry", 
+    desc: "Kids Cavity Fillings & Pulpotomy Care", 
+    to: "/pediatric-dentistry-madurai/",
+    icon: "👶"
+  },
+  { 
+    label: "Gum Care & Periodontics", 
+    desc: "Bleeding Gums, Deep Scaling & Flap Surgery", 
+    to: "/periodontics-madurai/",
+    icon: "🌿"
+  },
+];
+
 export const Navbar: React.FC<NavbarProps> = ({ onOpenAppointment }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [specialityDropdownOpen, setSpecialityDropdownOpen] = useState(false);
+  const [mobileSpecialityOpen, setMobileSpecialityOpen] = useState(false);
   const location = useLocation();
 
-  const navLinks = [
+  const isSpecialityActive = SPECIALTY_SUBMENU.some(
+    item => location.pathname === item.to || location.pathname === item.to.replace(/\/$/, '')
+  );
+
+  const mainNavLinks = [
     { label: "Home", to: "/" },
-    { label: "Specialties", to: "/services" },
     { label: "About & Doctors", to: "/about" },
     { label: "Smile Gallery", to: "/gallery" },
     { label: "Blog", to: "/blog" },
@@ -117,9 +179,92 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAppointment }) => {
             </div>
           </Link>
 
-          {/* Desktop Navigation Links - Shown only on xl (1280px+) screens */}
+          {/* Desktop Navigation Links - Shown on xl (1280px+) screens */}
           <nav className="hidden xl:flex items-center gap-1.5">
-            {navLinks.map((link) => {
+            {/* Home Link */}
+            <Link
+              to="/"
+              className={`px-3.5 py-1.5 rounded-full text-xs transition-all duration-200 whitespace-nowrap cursor-pointer ${
+                location.pathname === '/'
+                  ? 'bg-emerald-950 text-amber-300 font-bold shadow-xs border border-amber-400/30'
+                  : 'text-slate-700 hover:text-[#062017] hover:bg-emerald-900/5 font-semibold'
+              }`}
+            >
+              Home
+            </Link>
+
+            {/* Speciality Dropdown Submenu (9 Services Pages) */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setSpecialityDropdownOpen(true)}
+              onMouseLeave={() => setSpecialityDropdownOpen(false)}
+            >
+              <button
+                type="button"
+                onClick={() => setSpecialityDropdownOpen(!specialityDropdownOpen)}
+                className={`px-3.5 py-1.5 rounded-full text-xs transition-all duration-200 whitespace-nowrap cursor-pointer flex items-center gap-1.5 ${
+                  isSpecialityActive || specialityDropdownOpen
+                    ? 'bg-emerald-950 text-amber-300 font-bold shadow-xs border border-amber-400/30'
+                    : 'text-slate-700 hover:text-[#062017] hover:bg-emerald-900/5 font-semibold'
+                }`}
+                aria-haspopup="true"
+                aria-expanded={specialityDropdownOpen}
+              >
+                <span>Speciality</span>
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${specialityDropdownOpen ? 'rotate-180 text-amber-400' : 'text-slate-500'}`} />
+              </button>
+
+              {/* Luxury Dropdown Submenu */}
+              {specialityDropdownOpen && (
+                <div className="absolute top-full left-0 mt-1.5 w-[400px] bg-white rounded-2xl shadow-2xl border border-emerald-900/15 p-3 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
+                  <div className="px-3 pb-2.5 mb-2 border-b border-slate-100 flex items-center justify-between">
+                    <div>
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-950 block">
+                        9 Clinical Specialties in Madurai
+                      </span>
+                      <span className="text-[10px] text-slate-500">
+                        Select a treatment for clinical details &amp; pricing
+                      </span>
+                    </div>
+                    <span className="text-[9.5px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200/80 shrink-0">
+                      Dr. Khalidh Khan (MDS)
+                    </span>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 gap-1 max-h-[70vh] overflow-y-auto">
+                    {SPECIALTY_SUBMENU.map((item) => {
+                      const isItemActive = location.pathname === item.to || location.pathname === item.to.replace(/\/$/, '');
+                      return (
+                        <Link
+                          key={item.to}
+                          to={item.to}
+                          onClick={() => setSpecialityDropdownOpen(false)}
+                          className={`flex items-start gap-2.5 p-2 rounded-xl transition-all group ${
+                            isItemActive 
+                              ? 'bg-emerald-900/10 border border-emerald-700/30' 
+                              : 'hover:bg-emerald-50/80 border border-transparent hover:border-emerald-200/60'
+                          }`}
+                        >
+                          <span className="text-base mt-0.5 shrink-0 group-hover:scale-110 transition-transform">{item.icon}</span>
+                          <div className="min-w-0 flex-1">
+                            <div className="text-xs font-bold text-slate-900 group-hover:text-emerald-950 transition-colors flex items-center justify-between">
+                              <span className="truncate">{item.label}</span>
+                              <ChevronRight className="w-3 h-3 text-slate-400 group-hover:text-emerald-700 group-hover:translate-x-0.5 transition-all opacity-0 group-hover:opacity-100 shrink-0 ml-1" />
+                            </div>
+                            <div className="text-[10.5px] text-slate-500 group-hover:text-emerald-800/80 line-clamp-1 leading-tight mt-0.5">
+                              {item.desc}
+                            </div>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Other Navigation Links */}
+            {mainNavLinks.slice(1).map((link) => {
               const isActive = location.pathname === link.to;
               return (
                 <Link
@@ -151,7 +296,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAppointment }) => {
               <span>WhatsApp</span>
             </a>
 
-            {/* Book Appointment Luxury CTA (Responsive & Never Clipped on Small Mobiles) */}
+            {/* Book Appointment Luxury CTA */}
             <button
               type="button"
               onClick={() => onOpenAppointment()}
@@ -162,7 +307,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAppointment }) => {
               <span className="min-[400px]:hidden">Book</span>
             </button>
 
-            {/* Mobile & Tablet Toggle Controls - Shown on < xl (tablets, small laptops, scaled screens) */}
+            {/* Mobile & Tablet Toggle Controls */}
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -176,7 +321,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAppointment }) => {
         </div>
       </div>
 
-      {/* 3. Mobile & Tablet Slide-Down Drawer (Smoothly accessible on all screens < 1280px) */}
+      {/* 3. Mobile & Tablet Slide-Down Drawer */}
       {mobileMenuOpen && (
         <div className="xl:hidden bg-[#FAF8F5] border-b border-emerald-950/15 px-4 pt-3 pb-6 space-y-4 shadow-2xl">
           
@@ -189,9 +334,74 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAppointment }) => {
             <span className="text-[11px] font-semibold text-emerald-800">105+ Verified Reviews</span>
           </div>
 
-          {/* Navigation Links */}
+          {/* Navigation Links with Speciality Accordion */}
           <nav className="flex flex-col divide-y divide-emerald-950/5">
-            {navLinks.map((link) => {
+            {/* 1. Home Link */}
+            <Link
+              to="/"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`py-3 px-3 text-sm rounded-xl flex items-center justify-between transition-colors ${
+                location.pathname === '/'
+                  ? 'bg-emerald-950 text-amber-300 font-bold'
+                  : 'text-slate-800 font-semibold hover:text-emerald-900 hover:bg-emerald-50'
+              }`}
+            >
+              <span>Home</span>
+              <ChevronRight className={`w-4 h-4 ${location.pathname === '/' ? 'text-amber-400' : 'text-emerald-700/60'}`} />
+            </Link>
+
+            {/* 2. Speciality Accordion Submenu */}
+            <div className="py-1">
+              <button
+                type="button"
+                onClick={() => setMobileSpecialityOpen(!mobileSpecialityOpen)}
+                className={`w-full py-3 px-3 text-sm rounded-xl flex items-center justify-between transition-colors cursor-pointer ${
+                  isSpecialityActive
+                    ? 'bg-emerald-950/10 text-emerald-950 font-bold'
+                    : 'text-slate-800 font-semibold hover:text-emerald-900 hover:bg-emerald-50'
+                }`}
+              >
+                <span className="flex items-center gap-2">
+                  <span>Speciality</span>
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
+                    9 Services
+                  </span>
+                </span>
+                <ChevronDown className={`w-4 h-4 text-emerald-700 transition-transform duration-200 ${mobileSpecialityOpen ? 'rotate-180 text-amber-600' : ''}`} />
+              </button>
+
+              {mobileSpecialityOpen && (
+                <div className="pl-2 pr-1 py-1.5 space-y-1 bg-white/70 rounded-xl mt-1 border border-emerald-950/10 shadow-xs">
+                  {SPECIALTY_SUBMENU.map((item) => {
+                    const isItemActive = location.pathname === item.to || location.pathname === item.to.replace(/\/$/, '');
+                    return (
+                      <Link
+                        key={item.to}
+                        to={item.to}
+                        onClick={() => {
+                          setMobileMenuOpen(false);
+                          setMobileSpecialityOpen(false);
+                        }}
+                        className={`flex items-center justify-between py-2.5 px-3 text-xs rounded-lg transition-colors ${
+                          isItemActive
+                            ? 'bg-emerald-950 text-amber-300 font-bold'
+                            : 'text-slate-700 hover:text-emerald-950 hover:bg-emerald-50/80 font-medium'
+                        }`}
+                      >
+                        <div className="flex items-center gap-2">
+                          <span className="text-sm">{item.icon}</span>
+                          <span>{item.label}</span>
+                        </div>
+                        <ChevronRight className="w-3.5 h-3.5 opacity-60" />
+                      </Link>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+
+            {/* Other Navigation Links */}
+            {mainNavLinks.slice(1).map((link) => {
               const isActive = location.pathname === link.to;
               return (
                 <Link

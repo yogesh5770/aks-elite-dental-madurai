@@ -67,10 +67,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAppointment }) => {
               </p>
             </div>
             <Link
-              to="/services"
+              to="/orthodontics-madurai/"
               className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-950 text-amber-300 hover:bg-emerald-900 font-bold text-sm transition-all shadow-md group shrink-0"
             >
-              <span>Explore All 8 Specialties</span>
+              <span>Explore All Specialties</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 text-amber-400" />
             </Link>
           </div>
@@ -95,7 +95,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAppointment }) => {
               <div className="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between">
                 <span className="text-xs font-semibold text-emerald-800">iTero 3D Scanned</span>
                 <Link
-                  to="/services"
+                  to="/orthodontics-madurai/"
                   className="text-xs font-bold text-emerald-950 hover:text-emerald-700 flex items-center gap-1 group-hover:underline"
                 >
                   View details <ArrowRight className="w-3.5 h-3.5" />
@@ -122,7 +122,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAppointment }) => {
               <div className="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between">
                 <span className="text-xs font-semibold text-amber-800">Single Visit Relief</span>
                 <Link
-                  to="/services"
+                  to="/root-canal-treatment-madurai/"
                   className="text-xs font-bold text-emerald-950 hover:text-emerald-700 flex items-center gap-1 group-hover:underline"
                 >
                   View details <ArrowRight className="w-3.5 h-3.5" />
@@ -149,7 +149,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAppointment }) => {
               <div className="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between">
                 <span className="text-xs font-semibold text-emerald-800">Lifetime Stability</span>
                 <Link
-                  to="/services"
+                  to="/prosthodontics-madurai/"
                   className="text-xs font-bold text-emerald-950 hover:text-emerald-700 flex items-center gap-1 group-hover:underline"
                 >
                   View details <ArrowRight className="w-3.5 h-3.5" />
