@@ -165,10 +165,6 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
                 {pageH1}
               </h1>
 
-              <p className="text-base sm:text-lg text-emerald-100/90 font-medium leading-relaxed max-w-3xl">
-                {sections[0]?.content || pageDesc}
-              </p>
-
               {/* Doctor Credibility Badge */}
               <div className="flex flex-wrap items-center gap-3 pt-2 text-xs text-emerald-200/90 bg-emerald-950/70 border border-emerald-800/80 p-4 rounded-2xl w-fit shadow-md">
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-500 text-emerald-950 font-extrabold flex items-center justify-center text-sm shrink-0 shadow-sm">
