@@ -24,6 +24,18 @@ import { FAQSection } from '../components/common/FAQSection';
 import { CLINIC_DATA } from '../data/clinicData';
 import { SERVICES_ARCHITECTURE_DATA } from '../data/servicesArchitectureData';
 
+const SERVICE_LOCATION_URL_MAP: Record<string, string> = {
+  'orthodontics': '/orthodontics-madurai/',
+  'general-dentistry': '/general-dentistry-madurai/',
+  'endodontics': '/root-canal-treatment-madurai/',
+  'prosthodontics': '/prosthodontics-madurai/',
+  'cosmetic-dentistry': '/cosmetic-dentistry-madurai/',
+  'preventive-dentistry': '/preventive-dentistry-madurai/',
+  'oral-maxillofacial-surgery': '/oral-maxillofacial-surgery-madurai/',
+  'periodontics': '/periodontics-madurai/',
+  'pediatric-dentistry': '/pediatric-dentistry-madurai/',
+};
+
 interface ServicesPageProps {
   onOpenAppointment: (treatmentTitle?: string) => void;
 }
@@ -97,7 +109,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenAppointment })
                 </div>
 
                 <h3 className="text-lg font-bold font-serif text-slate-900 group-hover:text-emerald-800 transition-colors mb-2">
-                  <Link to={`/services/${dept.slug}`}>
+                  <Link to={SERVICE_LOCATION_URL_MAP[dept.slug] || `/services/${dept.slug}`}>
                     {dept.name}
                   </Link>
                 </h3>
@@ -121,7 +133,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenAppointment })
 
               <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
                 <Link
-                  to={`/services/${dept.slug}`}
+                  to={SERVICE_LOCATION_URL_MAP[dept.slug] || `/services/${dept.slug}`}
                   className="text-xs font-bold text-emerald-800 group-hover:text-emerald-950 inline-flex items-center gap-1 hover:underline underline-offset-2"
                 >
                   <span>Department Details</span>

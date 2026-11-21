@@ -53,7 +53,81 @@ const pages = [
     ogImage: 'https://www.aksdentalclinic.in/og/blog-og.jpg',
   },
 
-  // 2. The 9 Dedicated Clinical Specialty Pages (PDF Recommended Architecture)
+  // 2. The 9 Dedicated Location-Targeted Pages in Madurai (SEO Team Official URLs)
+  {
+    targetFile: 'orthodontics-madurai.html',
+    dirAlias: 'orthodontics-madurai/index.html',
+    canonical: 'https://www.aksdentalclinic.in/orthodontics-madurai/',
+    title: 'Orthodontic Treatment in Madurai | Braces & Aligners',
+    description: 'Explore orthodontic treatment in Madurai, including metal, ceramic and self-ligating braces, clear aligners, Invisalign and growth modification options.',
+    ogImage: 'https://www.aksdentalclinic.in/og/orthodontics-og.jpg',
+  },
+  {
+    targetFile: 'general-dentistry-madurai.html',
+    dirAlias: 'general-dentistry-madurai/index.html',
+    canonical: 'https://www.aksdentalclinic.in/general-dentistry-madurai/',
+    title: 'General Dentistry in Madurai | Cleaning, Fillings & Extraction',
+    description: 'General dentistry in Madurai for routine dental examinations, scaling and teeth cleaning, tooth-coloured fillings and tooth extraction when needed.',
+    ogImage: 'https://www.aksdentalclinic.in/og/general-dentistry-og.jpg',
+  },
+  {
+    targetFile: 'root-canal-treatment-madurai.html',
+    dirAlias: 'root-canal-treatment-madurai/index.html',
+    canonical: 'https://www.aksdentalclinic.in/root-canal-treatment-madurai/',
+    title: 'Root Canal Treatment in Madurai | RCT & Tooth Pain Care',
+    description: 'Learn about root canal treatment in Madurai for teeth with inflamed or infected pulp, including assessment, treatment steps and restoration after RCT.',
+    ogImage: 'https://www.aksdentalclinic.in/og/endodontics-og.jpg',
+  },
+  {
+    targetFile: 'prosthodontics-madurai.html',
+    dirAlias: 'prosthodontics-madurai/index.html',
+    canonical: 'https://www.aksdentalclinic.in/prosthodontics-madurai/',
+    title: 'Prosthodontics in Madurai | Implants, Crowns & Dentures',
+    description: 'Explore prosthodontic care in Madurai, including dental implants, full-mouth implant options, ceramic and zirconia crowns, bridges and dentures.',
+    ogImage: 'https://www.aksdentalclinic.in/og/prosthodontics-og.jpg',
+  },
+  {
+    targetFile: 'cosmetic-dentistry-madurai.html',
+    dirAlias: 'cosmetic-dentistry-madurai/index.html',
+    canonical: 'https://www.aksdentalclinic.in/cosmetic-dentistry-madurai/',
+    title: 'Cosmetic Dentistry in Madurai | Veneers, Whitening & Smile Design',
+    description: 'Explore cosmetic dentistry in Madurai, including veneers, smile designing and teeth whitening, with treatment choices based on oral health and goals.',
+    ogImage: 'https://www.aksdentalclinic.in/og/cosmetic-dentistry-og.jpg',
+  },
+  {
+    targetFile: 'preventive-dentistry-madurai.html',
+    dirAlias: 'preventive-dentistry-madurai/index.html',
+    canonical: 'https://www.aksdentalclinic.in/preventive-dentistry-madurai/',
+    title: 'Preventive Dentistry in Madurai | Check-ups, Fluoride & Sealants',
+    description: 'Preventive dentistry in Madurai with routine dental check-ups, fluoride application and dental sealants to help reduce the risk of common dental problems.',
+    ogImage: 'https://www.aksdentalclinic.in/og/preventive-dentistry-og.jpg',
+  },
+  {
+    targetFile: 'oral-maxillofacial-surgery-madurai.html',
+    dirAlias: 'oral-maxillofacial-surgery-madurai/index.html',
+    canonical: 'https://www.aksdentalclinic.in/oral-maxillofacial-surgery-madurai/',
+    title: 'Oral & Maxillofacial Surgery in Madurai | Wisdom Teeth & Trauma',
+    description: 'Oral and maxillofacial surgery in Madurai for assessment of impacted wisdom teeth, wisdom tooth surgery and selected oral or facial trauma concerns.',
+    ogImage: 'https://www.aksdentalclinic.in/og/oral-surgery-og.jpg',
+  },
+  {
+    targetFile: 'pediatric-dentistry-madurai.html',
+    dirAlias: 'pediatric-dentistry-madurai/index.html',
+    canonical: 'https://www.aksdentalclinic.in/pediatric-dentistry-madurai/',
+    title: "Pediatric Dentist in Madurai | Children's Dental Care & Fillings",
+    description: "Children's dental care in Madurai, including dental check-ups, kids' teeth fillings and pulpotomy when clinically indicated.",
+    ogImage: 'https://www.aksdentalclinic.in/og/pediatric-dentistry-og.jpg',
+  },
+  {
+    targetFile: 'periodontics-madurai.html',
+    dirAlias: 'periodontics-madurai/index.html',
+    canonical: 'https://www.aksdentalclinic.in/periodontics-madurai/',
+    title: 'Gum Treatment in Madurai | Periodontics & Gum Surgery',
+    description: 'Periodontic care in Madurai for gum assessment, gum disease treatment, professional deep cleaning and gum surgery when clinically indicated.',
+    ogImage: 'https://www.aksdentalclinic.in/og/periodontics-og.jpg',
+  },
+
+  // 3. Fallback Hierarchical Clinical Specialty Pages (/services/*)
   {
     targetFile: 'services/orthodontics.html',
     canonical: 'https://www.aksdentalclinic.in/services/orthodontics',
@@ -118,7 +192,7 @@ const pages = [
     ogImage: 'https://www.aksdentalclinic.in/og/pediatric-dentistry-og.jpg',
   },
 
-  // 3. Blog Posts
+  // 4. Blog Posts
   {
     targetFile: 'blog/clear-aligners-vs-metal-braces-cost-madurai.html',
     canonical: 'https://www.aksdentalclinic.in/blog/clear-aligners-vs-metal-braces-cost-madurai',
@@ -235,6 +309,14 @@ for (const p of pages) {
   fs.mkdirSync(path.dirname(targetFilePath), { recursive: true });
   fs.writeFileSync(targetFilePath, pageHtml, 'utf8');
   console.log(`Generated static page: ${p.targetFile} (Canonical: ${p.canonical})`);
+
+  // If a directory alias exists (e.g. `orthodontics-madurai/index.html`), write it too so `/route/` with trailing slash serves 200 directly
+  if (p.dirAlias) {
+    const dirAliasPath = path.join(distDir, p.dirAlias);
+    fs.mkdirSync(path.dirname(dirAliasPath), { recursive: true });
+    fs.writeFileSync(dirAliasPath, pageHtml, 'utf8');
+    console.log(`Generated trailing-slash alias: ${p.dirAlias}`);
+  }
 }
 
 console.log(`All ${pages.length} static sub-pages generated successfully!`);

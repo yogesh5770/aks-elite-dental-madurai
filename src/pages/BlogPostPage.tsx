@@ -17,6 +17,18 @@ import { SEO } from '../components/common/SEO';
 import { BLOG_POSTS_DATA, SERVICES_ARCHITECTURE_DATA } from '../data/servicesArchitectureData';
 import { CLINIC_DATA } from '../data/clinicData';
 
+const SERVICE_LOCATION_URL_MAP: Record<string, string> = {
+  'orthodontics': '/orthodontics-madurai/',
+  'general-dentistry': '/general-dentistry-madurai/',
+  'endodontics': '/root-canal-treatment-madurai/',
+  'prosthodontics': '/prosthodontics-madurai/',
+  'cosmetic-dentistry': '/cosmetic-dentistry-madurai/',
+  'preventive-dentistry': '/preventive-dentistry-madurai/',
+  'oral-maxillofacial-surgery': '/oral-maxillofacial-surgery-madurai/',
+  'periodontics': '/periodontics-madurai/',
+  'pediatric-dentistry': '/pediatric-dentistry-madurai/',
+};
+
 interface BlogPostPageProps {
   onOpenAppointment?: (treatmentTitle?: string) => void;
 }
@@ -202,7 +214,7 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({ onOpenAppointment })
               </p>
             </div>
             <Link
-              to={`/services/${relatedService.slug}`}
+              to={SERVICE_LOCATION_URL_MAP[relatedService.slug] || `/services/${relatedService.slug}`}
               className="px-5 py-2.5 bg-amber-400 text-emerald-950 text-xs font-bold rounded-xl hover:bg-amber-300 transition-colors shrink-0 flex items-center gap-1.5"
             >
               <span>View {relatedService.shortTitle}</span>

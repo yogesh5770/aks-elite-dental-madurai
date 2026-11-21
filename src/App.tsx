@@ -37,6 +37,28 @@ export const App: React.FC = () => {
         <main className="flex-1 w-full max-w-full overflow-x-hidden">
           <Routes>
             <Route path="/" element={<HomePage onOpenAppointment={handleOpenAppointment} />} />
+            
+            {/* 9 Location-Targeted Service Pages for Madurai SEO */}
+            <Route path="/orthodontics-madurai" element={<ServiceDetailPage serviceSlug="orthodontics-madurai" onOpenAppointment={handleOpenAppointment} />} />
+            <Route path="/orthodontics-madurai/" element={<ServiceDetailPage serviceSlug="orthodontics-madurai" onOpenAppointment={handleOpenAppointment} />} />
+            <Route path="/general-dentistry-madurai" element={<ServiceDetailPage serviceSlug="general-dentistry-madurai" onOpenAppointment={handleOpenAppointment} />} />
+            <Route path="/general-dentistry-madurai/" element={<ServiceDetailPage serviceSlug="general-dentistry-madurai" onOpenAppointment={handleOpenAppointment} />} />
+            <Route path="/root-canal-treatment-madurai" element={<ServiceDetailPage serviceSlug="root-canal-treatment-madurai" onOpenAppointment={handleOpenAppointment} />} />
+            <Route path="/root-canal-treatment-madurai/" element={<ServiceDetailPage serviceSlug="root-canal-treatment-madurai" onOpenAppointment={handleOpenAppointment} />} />
+            <Route path="/prosthodontics-madurai" element={<ServiceDetailPage serviceSlug="prosthodontics-madurai" onOpenAppointment={handleOpenAppointment} />} />
+            <Route path="/prosthodontics-madurai/" element={<ServiceDetailPage serviceSlug="prosthodontics-madurai" onOpenAppointment={handleOpenAppointment} />} />
+            <Route path="/cosmetic-dentistry-madurai" element={<ServiceDetailPage serviceSlug="cosmetic-dentistry-madurai" onOpenAppointment={handleOpenAppointment} />} />
+            <Route path="/cosmetic-dentistry-madurai/" element={<ServiceDetailPage serviceSlug="cosmetic-dentistry-madurai" onOpenAppointment={handleOpenAppointment} />} />
+            <Route path="/preventive-dentistry-madurai" element={<ServiceDetailPage serviceSlug="preventive-dentistry-madurai" onOpenAppointment={handleOpenAppointment} />} />
+            <Route path="/preventive-dentistry-madurai/" element={<ServiceDetailPage serviceSlug="preventive-dentistry-madurai" onOpenAppointment={handleOpenAppointment} />} />
+            <Route path="/oral-maxillofacial-surgery-madurai" element={<ServiceDetailPage serviceSlug="oral-maxillofacial-surgery-madurai" onOpenAppointment={handleOpenAppointment} />} />
+            <Route path="/oral-maxillofacial-surgery-madurai/" element={<ServiceDetailPage serviceSlug="oral-maxillofacial-surgery-madurai" onOpenAppointment={handleOpenAppointment} />} />
+            <Route path="/pediatric-dentistry-madurai" element={<ServiceDetailPage serviceSlug="pediatric-dentistry-madurai" onOpenAppointment={handleOpenAppointment} />} />
+            <Route path="/pediatric-dentistry-madurai/" element={<ServiceDetailPage serviceSlug="pediatric-dentistry-madurai" onOpenAppointment={handleOpenAppointment} />} />
+            <Route path="/periodontics-madurai" element={<ServiceDetailPage serviceSlug="periodontics-madurai" onOpenAppointment={handleOpenAppointment} />} />
+            <Route path="/periodontics-madurai/" element={<ServiceDetailPage serviceSlug="periodontics-madurai" onOpenAppointment={handleOpenAppointment} />} />
+
+            {/* Hierarchical Service Routes */}
             <Route path="/services" element={<ServicesPage onOpenAppointment={handleOpenAppointment} />} />
             <Route path="/services/:slug" element={<ServiceDetailPage onOpenAppointment={handleOpenAppointment} />} />
             <Route path="/blog" element={<BlogPage onOpenAppointment={handleOpenAppointment} />} />

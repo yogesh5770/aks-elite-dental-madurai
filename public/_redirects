@@ -1,2 +1,23 @@
-/*    /index.html   200
+# AK'S Elite Dental Clinic - Cloudflare Pages Redirects & Routing
+# 301 Permanent Redirects: Consolidate legacy service URLs to official Madurai location pages
+/services/orthodontics            /orthodontics-madurai/           301
+/services/orthodontics/           /orthodontics-madurai/           301
+/services/general-dentistry       /general-dentistry-madurai/      301
+/services/general-dentistry/      /general-dentistry-madurai/      301
+/services/endodontics             /root-canal-treatment-madurai/   301
+/services/endodontics/            /root-canal-treatment-madurai/   301
+/services/prosthodontics          /prosthodontics-madurai/         301
+/services/prosthodontics/         /prosthodontics-madurai/         301
+/services/cosmetic-dentistry      /cosmetic-dentistry-madurai/     301
+/services/cosmetic-dentistry/     /cosmetic-dentistry-madurai/     301
+/services/preventive-dentistry    /preventive-dentistry-madurai/   301
+/services/preventive-dentistry/   /preventive-dentistry-madurai/   301
+/services/oral-maxillofacial-surgery /oral-maxillofacial-surgery-madurai/ 301
+/services/oral-maxillofacial-surgery/ /oral-maxillofacial-surgery-madurai/ 301
+/services/periodontics            /periodontics-madurai/           301
+/services/periodontics/           /periodontics-madurai/           301
+/services/pediatric-dentistry     /pediatric-dentistry-madurai/    301
+/services/pediatric-dentistry/    /pediatric-dentistry-madurai/    301
 
+# Single Page Application (SPA) client router fallback
+/*    /index.html   200

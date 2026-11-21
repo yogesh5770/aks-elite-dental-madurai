@@ -171,15 +171,15 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAppointment }) => {
           </p>
           <p className="leading-relaxed">
             <strong className="text-white">9 Clinical Specialties in Madurai:</strong>{' '}
-            <Link to="/services/orthodontics" className="text-emerald-200 hover:text-amber-300 underline underline-offset-2">Orthodontics &amp; Braces</Link> •{' '}
-            <Link to="/services/general-dentistry" className="text-emerald-200 hover:text-amber-300 underline underline-offset-2">General Dentistry &amp; Cleaning</Link> •{' '}
-            <Link to="/services/endodontics" className="text-emerald-200 hover:text-amber-300 underline underline-offset-2">Single-Sitting Root Canal (RCT)</Link> •{' '}
-            <Link to="/services/prosthodontics" className="text-emerald-200 hover:text-amber-300 underline underline-offset-2">Dental Implants &amp; Zirconia Crowns</Link> •{' '}
-            <Link to="/services/cosmetic-dentistry" className="text-emerald-200 hover:text-amber-300 underline underline-offset-2">Cosmetic Smile Designing &amp; Veneers</Link> •{' '}
-            <Link to="/services/preventive-dentistry" className="text-emerald-200 hover:text-amber-300 underline underline-offset-2">Preventive Dentistry &amp; Fluoride</Link> •{' '}
-            <Link to="/services/oral-maxillofacial-surgery" className="text-emerald-200 hover:text-amber-300 underline underline-offset-2">Wisdom Tooth Surgery</Link> •{' '}
-            <Link to="/services/periodontics" className="text-emerald-200 hover:text-amber-300 underline underline-offset-2">Gum Care &amp; Periodontics</Link> •{' '}
-            <Link to="/services/pediatric-dentistry" className="text-emerald-200 hover:text-amber-300 underline underline-offset-2">Pediatric Kids Dentistry</Link>.
+            <Link to="/orthodontics-madurai/" className="text-emerald-200 hover:text-amber-300 underline underline-offset-2">Orthodontics &amp; Braces</Link> •{' '}
+            <Link to="/general-dentistry-madurai/" className="text-emerald-200 hover:text-amber-300 underline underline-offset-2">General Dentistry &amp; Cleaning</Link> •{' '}
+            <Link to="/root-canal-treatment-madurai/" className="text-emerald-200 hover:text-amber-300 underline underline-offset-2">Single-Sitting Root Canal (RCT)</Link> •{' '}
+            <Link to="/prosthodontics-madurai/" className="text-emerald-200 hover:text-amber-300 underline underline-offset-2">Dental Implants &amp; Zirconia Crowns</Link> •{' '}
+            <Link to="/cosmetic-dentistry-madurai/" className="text-emerald-200 hover:text-amber-300 underline underline-offset-2">Cosmetic Smile Designing &amp; Veneers</Link> •{' '}
+            <Link to="/preventive-dentistry-madurai/" className="text-emerald-200 hover:text-amber-300 underline underline-offset-2">Preventive Dentistry &amp; Fluoride</Link> •{' '}
+            <Link to="/oral-maxillofacial-surgery-madurai/" className="text-emerald-200 hover:text-amber-300 underline underline-offset-2">Wisdom Tooth Surgery</Link> •{' '}
+            <Link to="/periodontics-madurai/" className="text-emerald-200 hover:text-amber-300 underline underline-offset-2">Gum Care &amp; Periodontics</Link> •{' '}
+            <Link to="/pediatric-dentistry-madurai/" className="text-emerald-200 hover:text-amber-300 underline underline-offset-2">Pediatric Kids Dentistry</Link>.
           </p>
         </div>
 
