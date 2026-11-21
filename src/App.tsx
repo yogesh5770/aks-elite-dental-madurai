@@ -27,13 +27,13 @@ export const App: React.FC = () => {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-[#FAF8F5] text-slate-900 flex flex-col font-sans pb-16 sm:pb-0 selection:bg-emerald-700 selection:text-white">
+      <div className="min-h-screen w-full max-w-full overflow-x-clip bg-[#FAF8F5] text-slate-900 flex flex-col font-sans pb-16 sm:pb-0 selection:bg-emerald-700 selection:text-white">
         
         {/* 1. Header Navbar */}
         <Navbar onOpenAppointment={() => handleOpenAppointment()} />
 
         {/* 2. Routed Content View */}
-        <main className="flex-1 w-full max-w-full overflow-x-hidden">
+        <main className="flex-1 w-full max-w-full">
           <Routes>
             <Route path="/" element={<HomePage onOpenAppointment={handleOpenAppointment} />} />
             

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Phone, Clock, Menu, X, Star, MessageSquare, Calendar, ChevronRight, ChevronDown, Award } from 'lucide-react';
 import { CLINIC_DATA } from '../../data/clinicData';
@@ -70,6 +70,38 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAppointment }) => {
   const [mobileSpecialityOpen, setMobileSpecialityOpen] = useState(false);
   const location = useLocation();
 
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+    setSpecialityDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => {
+      setSpecialityDropdownOpen(false);
+    }, 250); // 250ms buffer prevents submenu from vanishing when moving cursor down
+  };
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setSpecialityDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, []);
+
   const isSpecialityActive = SPECIALTY_SUBMENU.some(
     item => location.pathname === item.to || location.pathname === item.to.replace(/\/$/, '')
   );
@@ -83,7 +115,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAppointment }) => {
   ];
 
   return (
-    <header className="sticky top-0 z-40 bg-[#FAF8F5]/95 backdrop-blur-xl border-b border-emerald-950/10 shadow-[0_4px_20px_-4px_rgba(15,56,44,0.06)] text-slate-900 font-sans w-full">
+    <header className="sticky top-0 z-50 bg-[#FAF8F5]/95 backdrop-blur-xl border-b border-emerald-950/10 shadow-[0_4px_20px_-4px_rgba(15,56,44,0.06)] text-slate-900 font-sans w-full">
       
       {/* 1. Top Announcement & Direct Access Ticker */}
       <div className="bg-[#061D15] text-emerald-100 py-1 sm:py-1.5 px-2.5 sm:px-6 lg:px-8 text-xs font-sans border-b border-emerald-950/40 relative z-50 w-full overflow-hidden">
@@ -147,7 +179,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAppointment }) => {
       <div className="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-18 sm:h-20 gap-2 sm:gap-4">
           
-          {/* Brand Logo & Title with Crystal-Clear Luxury Lockup (Zero Wrapping & Zero Clipping) */}
+          {/* Brand Logo & Title with Crystal-Clear Luxury Lockup */}
           <Link to="/" className="flex items-center gap-2 sm:gap-3.5 group shrink min-w-0 select-none">
             {/* Tooth Emblem Squircle Badge */}
             <div className="h-10 w-11 sm:h-12 sm:w-14 rounded-2xl bg-gradient-to-br from-[#092B20] via-[#0F382C] to-[#04150F] flex items-center justify-center shadow-md shadow-emerald-950/25 p-1 sm:p-1.5 group-hover:scale-105 group-hover:border-emerald-400/50 transition-all duration-300 border border-emerald-600/30 shrink-0">
@@ -193,16 +225,20 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAppointment }) => {
               Home
             </Link>
 
-            {/* Speciality Dropdown Submenu (9 Services Pages) */}
+            {/* Speciality Dropdown Submenu (9 Services Pages) with Seamless Hover Bridge */}
             <div 
-              className="relative"
-              onMouseEnter={() => setSpecialityDropdownOpen(true)}
-              onMouseLeave={() => setSpecialityDropdownOpen(false)}
+              ref={dropdownRef}
+              className="relative py-2"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
             >
               <button
                 type="button"
-                onClick={() => setSpecialityDropdownOpen(!specialityDropdownOpen)}
-                className={`px-3.5 py-1.5 rounded-full text-xs transition-all duration-200 whitespace-nowrap cursor-pointer flex items-center gap-1.5 ${
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSpecialityDropdownOpen(prev => !prev);
+                }}
+                className={`px-3.5 py-1.5 rounded-full text-xs transition-all duration-200 whitespace-nowrap cursor-pointer flex items-center gap-1.5 select-none ${
                   isSpecialityActive || specialityDropdownOpen
                     ? 'bg-emerald-950 text-amber-300 font-bold shadow-xs border border-amber-400/30'
                     : 'text-slate-700 hover:text-[#062017] hover:bg-emerald-900/5 font-semibold'
@@ -214,50 +250,59 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAppointment }) => {
                 <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${specialityDropdownOpen ? 'rotate-180 text-amber-400' : 'text-slate-500'}`} />
               </button>
 
-              {/* Luxury Dropdown Submenu */}
+              {/* Luxury Dropdown Submenu with continuous hit-bridge (never vanishes when moving mouse down) */}
               {specialityDropdownOpen && (
-                <div className="absolute top-full left-0 mt-1.5 w-[400px] bg-white rounded-2xl shadow-2xl border border-emerald-900/15 p-3 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
-                  <div className="px-3 pb-2.5 mb-2 border-b border-slate-100 flex items-center justify-between">
-                    <div>
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-950 block">
-                        9 Clinical Specialties in Madurai
-                      </span>
-                      <span className="text-[10px] text-slate-500">
-                        Select a treatment for clinical details &amp; pricing
+                <div 
+                  className="absolute top-full left-0 pt-1.5 w-[420px] z-50 pointer-events-auto"
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  {/* Invisible Hit Bridge to bridge any mouse movement gap */}
+                  <div className="absolute -top-3 left-0 right-0 h-4 bg-transparent pointer-events-auto" />
+
+                  <div className="bg-white rounded-2xl shadow-2xl border border-emerald-900/15 p-3.5 ring-1 ring-black/5 relative z-10 animate-in fade-in slide-in-from-top-1 duration-150">
+                    <div className="px-3 pb-2.5 mb-2 border-b border-slate-100 flex items-center justify-between">
+                      <div>
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-950 block">
+                          9 Clinical Specialties in Madurai
+                        </span>
+                        <span className="text-[10px] text-slate-500">
+                          Select a treatment for clinical details &amp; pricing
+                        </span>
+                      </div>
+                      <span className="text-[9.5px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200/80 shrink-0">
+                        Dr. Khalidh Khan (MDS)
                       </span>
                     </div>
-                    <span className="text-[9.5px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200/80 shrink-0">
-                      Dr. Khalidh Khan (MDS)
-                    </span>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 gap-1 max-h-[70vh] overflow-y-auto">
-                    {SPECIALTY_SUBMENU.map((item) => {
-                      const isItemActive = location.pathname === item.to || location.pathname === item.to.replace(/\/$/, '');
-                      return (
-                        <Link
-                          key={item.to}
-                          to={item.to}
-                          onClick={() => setSpecialityDropdownOpen(false)}
-                          className={`flex items-start gap-2.5 p-2 rounded-xl transition-all group ${
-                            isItemActive 
-                              ? 'bg-emerald-900/10 border border-emerald-700/30' 
-                              : 'hover:bg-emerald-50/80 border border-transparent hover:border-emerald-200/60'
-                          }`}
-                        >
-                          <span className="text-base mt-0.5 shrink-0 group-hover:scale-110 transition-transform">{item.icon}</span>
-                          <div className="min-w-0 flex-1">
-                            <div className="text-xs font-bold text-slate-900 group-hover:text-emerald-950 transition-colors flex items-center justify-between">
-                              <span className="truncate">{item.label}</span>
-                              <ChevronRight className="w-3 h-3 text-slate-400 group-hover:text-emerald-700 group-hover:translate-x-0.5 transition-all opacity-0 group-hover:opacity-100 shrink-0 ml-1" />
+                    
+                    <div className="grid grid-cols-1 gap-1 max-h-[70vh] overflow-y-auto">
+                      {SPECIALTY_SUBMENU.map((item) => {
+                        const isItemActive = location.pathname === item.to || location.pathname === item.to.replace(/\/$/, '');
+                        return (
+                          <Link
+                            key={item.to}
+                            to={item.to}
+                            onClick={() => setSpecialityDropdownOpen(false)}
+                            className={`flex items-start gap-2.5 p-2 rounded-xl transition-all group ${
+                              isItemActive 
+                                ? 'bg-emerald-900/10 border border-emerald-700/30' 
+                                : 'hover:bg-emerald-50/80 border border-transparent hover:border-emerald-200/60'
+                            }`}
+                          >
+                            <span className="text-base mt-0.5 shrink-0 group-hover:scale-110 transition-transform">{item.icon}</span>
+                            <div className="min-w-0 flex-1">
+                              <div className="text-xs font-bold text-slate-900 group-hover:text-emerald-950 transition-colors flex items-center justify-between">
+                                <span className="truncate">{item.label}</span>
+                                <ChevronRight className="w-3 h-3 text-slate-400 group-hover:text-emerald-700 group-hover:translate-x-0.5 transition-all opacity-0 group-hover:opacity-100 shrink-0 ml-1" />
+                              </div>
+                              <div className="text-[10.5px] text-slate-500 group-hover:text-emerald-800/80 line-clamp-1 leading-tight mt-0.5">
+                                {item.desc}
+                              </div>
                             </div>
-                            <div className="text-[10.5px] text-slate-500 group-hover:text-emerald-800/80 line-clamp-1 leading-tight mt-0.5">
-                              {item.desc}
-                            </div>
-                          </div>
-                        </Link>
-                      );
-                    })}
+                          </Link>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
               )}
