@@ -27,5 +27,9 @@
 /services/pediatric-dentistry     /pediatric-dentistry-madurai/    301
 /services/pediatric-dentistry/    /pediatric-dentistry-madurai/    301
 
+# 301 Permanent Redirects: Legacy blog URL to recommended Madurai URL
+/blog/dental-implants-full-mouth-restoration-guide  /blog/full-mouth-dental-implants-madurai/  301
+/blog/dental-implants-full-mouth-restoration-guide/ /blog/full-mouth-dental-implants-madurai/  301
+
 # Single Page Application (SPA) client router fallback
 /*    /index.html   200

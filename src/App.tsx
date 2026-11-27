@@ -66,6 +66,8 @@ export const App: React.FC = () => {
             <Route path="/specialities/" element={<Navigate to="/orthodontics-madurai/" replace />} />
             <Route path="/services/:slug" element={<ServiceDetailPage onOpenAppointment={handleOpenAppointment} />} />
             <Route path="/blog" element={<BlogPage onOpenAppointment={handleOpenAppointment} />} />
+            <Route path="/blog/dental-implants-full-mouth-restoration-guide" element={<Navigate to="/blog/full-mouth-dental-implants-madurai/" replace />} />
+            <Route path="/blog/dental-implants-full-mouth-restoration-guide/" element={<Navigate to="/blog/full-mouth-dental-implants-madurai/" replace />} />
             <Route path="/blog/:slug" element={<BlogPostPage onOpenAppointment={handleOpenAppointment} />} />
             <Route path="/about" element={<AboutPage onOpenAppointment={handleOpenAppointment} />} />
             <Route path="/gallery" element={<GalleryPage onOpenAppointment={handleOpenAppointment} />} />

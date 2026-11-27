@@ -966,6 +966,7 @@ export const SERVICES_ARCHITECTURE_DATA: Record<string, ServiceDetail> = {
 
 export interface BlogPost {
   slug: string;
+  trailingSlash?: boolean;
   title: string;
   seoTitle: string;
   seoDescription: string;
@@ -984,8 +985,8 @@ export const BLOG_POSTS_DATA: BlogPost[] = [
   {
     slug: 'clear-aligners-vs-metal-braces-cost-madurai',
     title: 'Clear Aligners vs Metal Braces: Cost, Timeline & Results in Madurai',
-    seoTitle: 'Clear Aligners vs Braces Cost in Madurai | AK\'S Dental',
-    seoDescription: 'Comparing clear aligners vs metal braces in Madurai. Cost breakdown, treatment timeline, comfort & results by Dr. Khalidh Khan (MDS): 95387 23872.',
+    seoTitle: 'Clear Aligners vs Metal Braces Cost in Madurai',
+    seoDescription: 'Compare clear aligners and metal braces, including treatment differences and factors that affect cost in Madurai. Consult an orthodontist for a personalised assessment.',
     category: 'Orthodontics',
     readTime: '5 min read',
     date: 'November 2026',
@@ -1009,8 +1010,8 @@ export const BLOG_POSTS_DATA: BlogPost[] = [
   {
     slug: 'single-sitting-root-canal-pain-relief-facts',
     title: 'Single-Sitting Root Canal: Is It Really Painless? Everything You Need to Know',
-    seoTitle: 'Single-Sitting Root Canal Painless? | AK\'S Dental Madurai',
-    seoDescription: 'Understand single-sitting root canal treatment in Madurai. Is it painful? How does rotary tech work? Complete clinical guide by Dr. KK: 95387 23872.',
+    seoTitle: 'Single-Sitting Root Canal Treatment: Pain & Facts',
+    seoDescription: 'Understand single-sitting root canal treatment, discomfort, recovery and when multiple visits may be needed. Consult a dentist in Madurai for case-specific advice.',
     category: 'Endodontics',
     readTime: '4 min read',
     date: 'November 2026',
@@ -1032,10 +1033,11 @@ export const BLOG_POSTS_DATA: BlogPost[] = [
     tags: ['Root Canal', 'Painless RCT', 'Single Sitting RCT', 'Endodontics']
   },
   {
-    slug: 'dental-implants-full-mouth-restoration-guide',
+    slug: 'full-mouth-dental-implants-madurai',
+    trailingSlash: true,
     title: 'Full Mouth Dental Implants: Procedure, Timeline & Lifetime Benefits',
-    seoTitle: 'Full Mouth Dental Implants in Madurai | AK\'S Elite Dental',
-    seoDescription: 'Complete guide to permanent dental implants & full mouth All-on-4 in Madurai. Procedure, bone requirements, cost & recovery: +91 95387 23872.',
+    seoTitle: 'Dental Implants & Full-Mouth Restoration Guide | Madurai',
+    seoDescription: 'Learn how dental implants can support tooth replacement and full-mouth restoration, including suitability, treatment stages and recovery. Consult a dentist in Madurai.',
     category: 'Prosthodontics',
     readTime: '6 min read',
     date: 'November 2026',
@@ -1059,8 +1061,8 @@ export const BLOG_POSTS_DATA: BlogPost[] = [
   {
     slug: 'parents-guide-child-milk-teeth-care',
     title: 'Why Milk Teeth Matter: Complete Pediatric Dental Care Guide for Parents',
-    seoTitle: 'Why Baby Teeth Matter: Parents Guide | AK\'S Dental Madurai',
-    seoDescription: 'Why baby teeth are crucial for child speech, jaw growth & adult teeth alignment. Prevention & pulpotomy care by Dr. KK in Madurai: 95387 23872.',
+    seoTitle: 'Milk Teeth Care: A Parent’s Guide | Pediatric Dentist Madurai',
+    seoDescription: 'Learn how to care for children’s milk teeth, prevent early cavities and build healthy oral habits. Get child-focused dental guidance in Madurai.',
     category: 'Pediatric Dentistry',
     readTime: '4 min read',
     date: 'November 2026',

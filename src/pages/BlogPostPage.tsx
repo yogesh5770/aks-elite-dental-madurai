@@ -42,7 +42,7 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({ onOpenAppointment })
   }
 
   const relatedService = SERVICES_ARCHITECTURE_DATA[post.relatedServiceSlug];
-  const canonicalUrl = `https://www.aksdentalclinic.in/blog/${post.slug}`;
+  const canonicalUrl = `https://www.aksdentalclinic.in/blog/${post.slug}${post.trailingSlash ? '/' : ''}`;
 
   // Schema.org MedicalWebPage / BlogPosting
   const articleSchema = {

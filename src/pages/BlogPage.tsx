@@ -128,7 +128,7 @@ clear aligners, root canal treatment, dental implants and children’s oral care
                   </div>
 
                   <h2 className="text-lg sm:text-xl font-bold font-serif text-slate-900 group-hover:text-emerald-800 transition-colors mb-3 leading-snug">
-                    <Link to={`/blog/${post.slug}`}>
+                    <Link to={`/blog/${post.slug}${post.trailingSlash ? '/' : ''}`}>
                       {post.title}
                     </Link>
                   </h2>
@@ -155,7 +155,7 @@ clear aligners, root canal treatment, dental implants and children’s oral care
                     By {post.author}
                   </span>
                   <Link
-                    to={`/blog/${post.slug}`}
+                    to={`/blog/${post.slug}${post.trailingSlash ? '/' : ''}`}
                     className="text-xs font-bold text-emerald-800 group-hover:text-emerald-950 inline-flex items-center gap-1.5"
                   >
                     <span>Read Article</span>
