@@ -13,8 +13,9 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenAppointment }) =
     <div className="w-full bg-[#FAF8F5] min-h-screen">
       {/* 0. Page-Specific SEO Metadata (Rank #1 Keyword Mapped - Under 70 chars title & Under 150 chars description) */}
       <SEO
-        title="Invisalign & Braces Before After in Madurai | AK'S Dental"
-        description="Real patient results in Madurai: Invisalign, teeth aligners, braces clip treatment & smile makeovers by Dr. Khalidh Khan. View verified smile cases."
+        title="Dental Treatment Gallery in Madurai | AK’s Elite Dental"
+        description="View the AK’s Elite Dental clinic gallery in Madurai, including clinic images and
+ treatment-result photographs. Contact the team to discuss suitable dental care."
         canonical="https://www.aksdentalclinic.in/gallery"
         ogImage="https://www.aksdentalclinic.in/og/gallery-og.jpg"
       />
