@@ -11,8 +11,9 @@ export const ContactPage: React.FC = () => {
     <div className="w-full bg-[#FAF8F5] min-h-screen">
       {/* 0. Page-Specific SEO Metadata (Rank #1 Keyword Mapped - Under 70 chars title & Under 150 chars description) */}
       <SEO
-        title="Dental Clinic in Madurai Near Me | K.Pudur | AK'S Elite Dental"
-        description="Visit AK'S Elite Dental Clinic in K.Pudur, Madurai near Surya Nagar. Top dental hospital for emergency care, aligners & root canals: +91 95387 23872."
+        title="Contact AK’s Elite Dental | Dental Clinic in K.Pudur, Madurai"
+        description="Contact AK’s Elite Dental in K.Pudur, Madurai to enquire about appointments and dental treatments.
+ View the clinic address, phone number and consultation hours."
         canonical="https://www.aksdentalclinic.in/contact"
         ogImage="https://www.aksdentalclinic.in/og/contact-og.jpg"
       />
