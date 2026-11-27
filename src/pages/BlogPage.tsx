@@ -38,8 +38,9 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onOpenAppointment }) => {
     <div className="w-full bg-[#FAF8F5] min-h-screen">
       {/* 0. SEO Meta Tags */}
       <SEO
-        title="Dental Health Guides & Patient Blog | AK'S Elite Dental"
-        description="Evidence-based dental care articles, aligner tips, root canal guides & recovery advice by Dr. Khalidh Khan (MDS) in Madurai: 95387 23872."
+        title="Dental Health Blog & Oral Care Tips | AK’s Elite Dental"
+        description="Explore dental health articles from AK’s Elite Dental, covering braces, 
+clear aligners, root canal treatment, dental implants and children’s oral care."
         canonical="https://www.aksdentalclinic.in/blog"
         ogImage="https://www.aksdentalclinic.in/og/blog-og.jpg"
       />
